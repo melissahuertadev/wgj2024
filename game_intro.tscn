@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://osweolbec0y3" path="res://assets/story4.png" id="4_yuj5f"]
 [ext_resource type="Texture2D" uid="uid://bnn48l4rffhr2" path="res://assets/story5.png" id="5_ckbki"]
 
+[sub_resource type="Animation" id="Animation_b5ap2"]
+length = 0.001
+
 [sub_resource type="Animation" id="Animation_4fqol"]
 resource_name = "intro_animation"
 length = 30.0
@@ -22,9 +25,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [ExtResource("1_a7ow1"), ExtResource("2_q21su"), ExtResource("2_yd4sk"), ExtResource("4_yuj5f"), ExtResource("5_ckbki")]
 }
-
-[sub_resource type="Animation" id="Animation_b5ap2"]
-length = 0.001
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k564x"]
 _data = {
