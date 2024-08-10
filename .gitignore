@@ -1,0 +1,13 @@
+# Godot 4+ specific ignores
+.godot/
+
+# Godot-specific files
+.import/
+.mono/
+.tmp/
+.vscode/
+
+# Project-specific files
+.DS_Store
+*.log
+
