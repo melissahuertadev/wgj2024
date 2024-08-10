@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqo74cav0iy6b"]
+
+[ext_resource type="Script" path="res://title_screen.gd" id="1_uinck"]
+[ext_resource type="Texture2D" uid="uid://b538bx1tsxvs" path="res://assets/title_screen.png" id="1_xgdkx"]
+[ext_resource type="Theme" uid="uid://bmqb4swgv2me5" path="res://button_theme.tres" id="3_4hcqd"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_uinck")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_xgdkx")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Inicio" type="Button" parent="."]
+layout_mode = 0
+offset_left = 837.0
+offset_top = 623.0
+offset_right = 1085.0
+offset_bottom = 670.0
+theme = ExtResource("3_4hcqd")
+
+[node name="Opciones" type="Button" parent="."]
+layout_mode = 0
+offset_left = 785.0
+offset_top = 709.0
+offset_right = 1134.0
+offset_bottom = 756.0
+theme = ExtResource("3_4hcqd")
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 670.0
+offset_top = 793.0
+offset_right = 1250.0
+offset_bottom = 840.0
+theme = ExtResource("3_4hcqd")
