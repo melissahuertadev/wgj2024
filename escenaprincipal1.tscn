@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c70ehhd5aau5n"]
+[gd_scene load_steps=6 format=3 uid="uid://dadmk7cjwlffk"]
 
-[ext_resource type="Script" path="res://ControlScript..gd" id="1_3jnjx"]
-[ext_resource type="Texture2D" uid="uid://b2k862di8p0iy" path="res://Anomalias/anomalia1.png" id="2_2ftpb"]
-[ext_resource type="Texture2D" uid="uid://kqg3wsb6x5c2" path="res://Anomalias/anomalia2.png" id="3_gcsn2"]
-[ext_resource type="Texture2D" uid="uid://ds10bnsfx8nhn" path="res://Anomalias/anomalia3.png" id="4_771qj"]
+[ext_resource type="Script" path="res://ControlScript..gd" id="1_fj5tb"]
+[ext_resource type="Texture2D" uid="uid://bebgcu87jrvw8" path="res://assets/images/puerta_scene/screen.png" id="2_iowel"]
+[ext_resource type="Texture2D" uid="uid://b2k862di8p0iy" path="res://Anomalias/anomalia1.png" id="3_y5486"]
+[ext_resource type="Texture2D" uid="uid://kqg3wsb6x5c2" path="res://Anomalias/anomalia2.png" id="4_8p43g"]
+[ext_resource type="Texture2D" uid="uid://ds10bnsfx8nhn" path="res://Anomalias/anomalia3.png" id="5_84xpa"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -12,12 +13,13 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 603.0
 offset_bottom = 352.0
-script = ExtResource("1_3jnjx")
+script = ExtResource("1_fj5tb")
 
 [node name="BackgroundRect" type="TextureRect" parent="Control"]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
+texture = ExtResource("2_iowel")
 expand_mode = 3
 stretch_mode = 4
 
@@ -47,7 +49,7 @@ offset_bottom = 456.0
 
 [node name="SpriteAnomalia1" type="Sprite2D" parent="Control"]
 position = Vector2(153, 125)
-texture = ExtResource("2_2ftpb")
+texture = ExtResource("3_y5486")
 
 [node name="ButtonDetectedAnomalia1" type="Button" parent="Control/SpriteAnomalia1"]
 self_modulate = Color(0, 0, 0, 0)
@@ -58,7 +60,7 @@ offset_bottom = 34.0
 
 [node name="SpriteAnomalia2" type="Sprite2D" parent="Control"]
 position = Vector2(583, 585)
-texture = ExtResource("3_gcsn2")
+texture = ExtResource("4_8p43g")
 
 [node name="ButtonDetectedAnomalia2" type="Button" parent="Control/SpriteAnomalia2"]
 self_modulate = Color(1, 1, 1, 0)
@@ -69,7 +71,7 @@ offset_bottom = 34.0
 
 [node name="SpriteAnomalia3" type="Sprite2D" parent="Control"]
 position = Vector2(250, 590)
-texture = ExtResource("4_771qj")
+texture = ExtResource("5_84xpa")
 
 [node name="ButtonDetectedAnomalia3" type="Button" parent="Control/SpriteAnomalia3"]
 self_modulate = Color(1, 1, 1, 0)
