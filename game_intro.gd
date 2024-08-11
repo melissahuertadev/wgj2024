@@ -4,7 +4,7 @@ extends Control
 @onready var continuar_button : Button = $BotonContinuar
 
 # Duración total de la intro en segundos
-@export var intro_duration : float = 15.0
+@export var text_display_duration : float = 15.0
 # Tiempo de retraso para mostrar el botón en segundos
 @export var button_delay : float = 2.0
 
@@ -17,6 +17,7 @@ var story_texts : Array = [
 	Debo encontrar una manera de escapar de este bucle..."
 ]
 var current_text_index : int = 0
+var text_timer : Timer
 
 func _ready():
 	# Reproduce la animación y establece el primer texto
@@ -27,40 +28,60 @@ func _ready():
 	# Inicialmente oculta el botón de continuar
 	continuar_button.visible = false
 	
-	# Muestra el primer texto
-	story_rich_text_label.text = story_texts[current_text_index]
-	
-	# Conecta la señal de pulsación del botón
+	# Muestra el primer texto y configura el temporizador
+	show_next_text()
 	continuar_button.pressed.connect(_on_Continuar_pressed)
 
-	# Configura el temporizador para mostrar el botón
-	show_button_after_delay()
 
-# Función que se llama cuando el botón "CONTINUAR" es presionado
-func _on_Continuar_pressed():
-	# Mueve al siguiente texto y maneja la visibilidad del botón
-	current_text_index += 1
-	
+
+#Muestra el siguiente texto valido en el panel
+func show_next_text():
 	if current_text_index < story_texts.size():
-		# Cambia el texto y oculta el botón
-		if story_rich_text_label:
-			story_rich_text_label.text = story_texts[current_text_index]
-		continuar_button.visible = false
-		
+		# Establece el texto actual
+		story_rich_text_label.text = story_texts[current_text_index]
+	
+		# Reinicia la animación
+		story_animation_player.seek(0)
+		story_animation_player.play("story_animation")
+	
+		# Reinicia el temporizador para mostrar el texto
+
+		if text_timer:
+			text_timer.stop()
+			text_timer.queue_free()
+		setup_timer(text_display_duration, _on_Text_timeout)
+	
 		# Muestra el botón después de un retraso
 		show_button_after_delay()
+	
+		# Incrementa el índice de texto
+		current_text_index += 1
 	else:
 		# Todos los textos han sido mostrados, cambia de escena
 		get_tree().change_scene_to_file("res://escenaprincipal.tscn")
 
-# Crea y configura un nuevo temporizador
-func show_button_after_delay():
+func setup_timer(duration: float, callback: Callable):
 	var timer = Timer.new()
-	timer.wait_time = button_delay
+	timer.wait_time = duration
 	timer.one_shot = true
 	timer.autostart = true
 	add_child(timer)
-	timer.timeout.connect(_on_Timer_timeout)
-
+	timer.timeout.connect(callback)
+	
+func show_button_after_delay():
+	setup_timer(button_delay, _on_Timer_timeout)
+	
 func _on_Timer_timeout():
 	continuar_button.visible = true
+
+func _on_Text_timeout():
+	# Este método es solo para asegurar la sincronización con el temporizador, 
+	# pero el cambio de texto será manejado por el botón
+	pass
+	
+# Función que se llama cuando el botón "CONTINUAR" es presionado
+func _on_Continuar_pressed():
+	# Oculta el botón inmediatamente
+	continuar_button.visible = false  
+	# Llama a la función que maneja el cambio de texto
+	show_next_text()  
