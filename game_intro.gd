@@ -13,8 +13,7 @@ var story_texts : Array = [
 	"[color=#d2b1ea]MISIÓN:[/color] Debo sobrevivir 3 días sin que la anomalía reinicie el día.\n\n[color=#d2b1ea]INSTRUCCIONES[/color]: Necesito identificar si hay alguna distorsión en la sala de comandos.\n
 	> Si no encuentro nada, debo descansar aquí.
 	> Si encuentro algo diferente, debo salir de la sala.
-	\nDe lo contrario, mi día se reiniciará...
-	Debo encontrar una manera de escapar de este bucle..."
+	\nDe lo contrario, mi día se reiniciará...\nDebo encontrar una manera de escapar de este bucle..."
 ]
 var current_text_index : int = 0
 var text_timer : Timer
