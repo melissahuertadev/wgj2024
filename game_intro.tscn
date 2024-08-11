@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://b3lg1ub1oacsi"]
+[gd_scene load_steps=14 format=3 uid="uid://b3lg1ub1oacsi"]
 
-[ext_resource type="Texture2D" uid="uid://ddpb2pnm102ij" path="res://assets/story1.png" id="1_a7ow1"]
 [ext_resource type="Script" path="res://game_intro.gd" id="1_eut6r"]
+[ext_resource type="Texture2D" uid="uid://cyc4fxpyp5qyh" path="res://assets/intro_screen.png" id="2_0noin"]
 [ext_resource type="Texture2D" uid="uid://cpeo580mxqv5j" path="res://assets/story2.png" id="2_q21su"]
 [ext_resource type="Texture2D" uid="uid://2cu5fjjpapl0" path="res://assets/story3.png" id="2_yd4sk"]
 [ext_resource type="Texture2D" uid="uid://osweolbec0y3" path="res://assets/story4.png" id="4_yuj5f"]
 [ext_resource type="Texture2D" uid="uid://bnn48l4rffhr2" path="res://assets/story5.png" id="5_ckbki"]
+[ext_resource type="Theme" uid="uid://vjgf023h2hbx" path="res://themes/bitacora_theme.tres" id="7_36pj3"]
 
 [sub_resource type="Animation" id="Animation_b5ap2"]
 length = 0.001
@@ -20,16 +21,53 @@ tracks/0/path = NodePath("TextureRect:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.00403883, 6, 12.104, 18, 24),
+"times": PackedFloat32Array(0, 6, 12.104, 18, 24),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("1_a7ow1"), ExtResource("2_q21su"), ExtResource("2_yd4sk"), ExtResource("4_yuj5f"), ExtResource("5_ckbki")]
+"values": [ExtResource("2_0noin"), ExtResource("2_q21su"), ExtResource("2_yd4sk"), ExtResource("4_yuj5f"), ExtResource("5_ckbki")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k564x"]
 _data = {
 "RESET": SubResource("Animation_b5ap2"),
 "intro_animation": SubResource("Animation_4fqol")
+}
+
+[sub_resource type="Animation" id="Animation_antv6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Story:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_gktd7"]
+resource_name = "story_animation"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Story:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ufm86"]
+_data = {
+"RESET": SubResource("Animation_antv6"),
+"story_animation": SubResource("Animation_gktd7")
 }
 
 [node name="GameIntro" type="Control"]
@@ -41,14 +79,65 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_eut6r")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_k564x")
-}
-
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("1_a7ow1")
+texture = ExtResource("2_0noin")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_k564x")
+}
+
+[node name="BitacoraActual" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1528.0
+offset_top = 70.0
+offset_right = 1622.0
+offset_bottom = 113.0
+theme = ExtResource("7_36pj3")
+text = "FECHA"
+
+[node name="ListaBitacoras" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1514.0
+offset_top = 804.0
+offset_right = 1717.0
+offset_bottom = 834.0
+theme = ExtResource("7_36pj3")
+theme_type_variation = &"HeaderMedium"
+text = "Bitacora#122"
+
+[node name="Story" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 225.0
+offset_right = 1324.0
+offset_bottom = 855.0
+theme = ExtResource("7_36pj3")
+theme_override_colors/default_color = Color(0.678431, 0.980392, 0.623529, 1)
+theme_override_font_sizes/normal_font_size = 52
+bbcode_enabled = true
+text = "Todo comenzó a las 08:00 AM.
+
+Partí en busca del \"Lirio de la Paz\", una planta que me ayudaría con la producción de oxígeno a gran escala. Un error en las coordenadas me llevó a un [color=#ffbf00]agujero negro[/color] que absorbió mi nave. Ahora estoy atrapada, y el [color=#ffbf00]día parece repetirse[/color] sin fin.
+
+Me di cuenta de algo inquietante: [color=#ffbf00]la fecha no cambiaba, mientras que otros aspectos del entorno sí[/color]. Cada intento de escapar parece enredarme aún más en este ciclo interminable..."
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="StoryAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ufm86")
+}
+
+[node name="BotonContinuar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1514.0
+offset_top = 950.0
+offset_right = 1708.0
+offset_bottom = 1001.0
+theme = ExtResource("7_36pj3")
+text = "CONTINUAR >"
