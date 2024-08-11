@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqo74cav0iy6b"]
+[gd_scene load_steps=5 format=3 uid="uid://bqo74cav0iy6b"]
 
 [ext_resource type="Script" path="res://title_screen.gd" id="1_uinck"]
-[ext_resource type="Texture2D" uid="uid://b538bx1tsxvs" path="res://assets/title_screen.png" id="1_xgdkx"]
+[ext_resource type="Texture2D" uid="uid://b2uh6p6bkcjxf" path="res://assets/images/title_screen.png" id="1_xgdkx"]
+[ext_resource type="Theme" uid="uid://05fym7366cqr" path="res://themes/title_screen_theme.tres" id="3_2gt2f"]
 [ext_resource type="Script" path="res://scripts/AudioLoopBase.gd" id="3_wn208"]
 
 [node name="TitleScreen" type="Control"]
@@ -19,24 +20,30 @@ stretch_mode = 4
 
 [node name="Inicio" type="Button" parent="."]
 layout_mode = 0
-offset_left = 837.0
-offset_top = 623.0
-offset_right = 1085.0
-offset_bottom = 670.0
+offset_left = 1556.0
+offset_top = 537.0
+offset_right = 1804.0
+offset_bottom = 665.0
+theme = ExtResource("3_2gt2f")
+text = "INICIO"
 
 [node name="Opciones" type="Button" parent="."]
 layout_mode = 0
-offset_left = 785.0
-offset_top = 709.0
-offset_right = 1134.0
-offset_bottom = 756.0
+offset_left = 1430.0
+offset_top = 673.0
+offset_right = 1804.0
+offset_bottom = 801.0
+theme = ExtResource("3_2gt2f")
+text = "OPCIONES"
 
 [node name="Quit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 670.0
-offset_top = 793.0
-offset_right = 1250.0
-offset_bottom = 840.0
+offset_left = 1093.0
+offset_top = 811.0
+offset_right = 1803.0
+offset_bottom = 939.0
+theme = ExtResource("3_2gt2f")
+text = "SALIR DEL JUEGO"
 
 [node name="AudioManager" type="Node" parent="."]
 script = ExtResource("3_wn208")

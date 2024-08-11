@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2bcb1k0uo8gx"]
+[gd_scene load_steps=4 format=3 uid="uid://c2bcb1k0uo8gx"]
 
 [ext_resource type="Script" path="res://Escenas/dormir.gd" id="1_lrrq4"]
-[ext_resource type="Texture2D" uid="uid://bau2epee1h8qh" path="res://fondos/fondo1.png" id="1_uiw37"]
+[ext_resource type="Texture2D" uid="uid://b51gh0ng5cfu1" path="res://assets/images/sala_de_comando_scene/screen.png" id="2_4uyim"]
+[ext_resource type="Theme" uid="uid://05fym7366cqr" path="res://themes/title_screen_theme.tres" id="3_osmgg"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_lrrq4")
@@ -9,20 +10,24 @@ script = ExtResource("1_lrrq4")
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("1_uiw37")
+texture = ExtResource("2_4uyim")
 
 [node name="TextEdit" type="TextEdit" parent="."]
-offset_left = 794.0
-offset_top = 494.0
-offset_right = 1086.0
-offset_bottom = 549.0
-text = "CREO QUE ME IRÉ A DORMIR"
+offset_left = 551.0
+offset_top = 340.0
+offset_right = 1351.0
+offset_bottom = 740.0
+theme = ExtResource("3_osmgg")
+text = "
+  Creo que me iré a dormir..."
 
 [node name="Button" type="Button" parent="."]
-offset_left = 1042.0
-offset_top = 751.0
-offset_right = 1200.0
-offset_bottom = 791.0
+offset_left = 810.0
+offset_top = 568.0
+offset_right = 1110.0
+offset_bottom = 652.0
+theme = ExtResource("3_osmgg")
+theme_override_font_sizes/font_size = 30
 text = "CONTINUAR
 "
 
