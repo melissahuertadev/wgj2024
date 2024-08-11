@@ -6,11 +6,9 @@
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 script = ExtResource("1_uinck")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TitleScreenRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0

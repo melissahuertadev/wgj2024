@@ -31,9 +31,7 @@ func _ready():
 	# Muestra el primer texto y configura el temporizador
 	show_next_text()
 	continuar_button.pressed.connect(_on_Continuar_pressed)
-
-
-
+	
 #Muestra el siguiente texto valido en el panel
 func show_next_text():
 	if current_text_index < story_texts.size():
@@ -45,7 +43,6 @@ func show_next_text():
 		story_animation_player.play("story_animation")
 	
 		# Reinicia el temporizador para mostrar el texto
-
 		if text_timer:
 			text_timer.stop()
 			text_timer.queue_free()
