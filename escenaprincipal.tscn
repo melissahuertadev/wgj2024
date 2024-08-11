@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://c70ehhd5aau5n"]
+
+[ext_resource type="Script" path="res://ControlScript..gd" id="1_3jnjx"]
+[ext_resource type="Texture2D" uid="uid://b2k862di8p0iy" path="res://Anomalias/anomalia1.png" id="2_2ftpb"]
+[ext_resource type="Texture2D" uid="uid://kqg3wsb6x5c2" path="res://Anomalias/anomalia2.png" id="3_gcsn2"]
+[ext_resource type="Texture2D" uid="uid://ds10bnsfx8nhn" path="res://Anomalias/anomalia3.png" id="4_771qj"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 603.0
+offset_bottom = 352.0
+script = ExtResource("1_3jnjx")
+
+[node name="BackgroundRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+expand_mode = 3
+stretch_mode = 4
+
+[node name="ButtonSiguiente" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1822.0
+offset_top = 510.0
+offset_right = 1896.0
+offset_bottom = 570.0
+text = ">"
+
+[node name="ButtonAnterior" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 510.0
+offset_right = 98.0
+offset_bottom = 570.0
+text = "<"
+
+[node name="FinalButton" type="Button" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 884.0
+offset_top = 380.0
+offset_right = 1036.0
+offset_bottom = 456.0
+
+[node name="SpriteAnomalia1" type="Sprite2D" parent="Control"]
+visible = false
+position = Vector2(153, 125)
+texture = ExtResource("2_2ftpb")
+
+[node name="SpriteAnomalia2" type="Sprite2D" parent="Control"]
+visible = false
+position = Vector2(583, 585)
+texture = ExtResource("3_gcsn2")
+
+[node name="SpriteAnomalia3" type="Sprite2D" parent="Control"]
+visible = false
+position = Vector2(956, 328)
+texture = ExtResource("4_771qj")
+
+[connection signal="pressed" from="Control/ButtonSiguiente" to="Control" method="_on_button_siguiente_pressed"]
+[connection signal="pressed" from="Control/ButtonAnterior" to="Control" method="_on_button_anterior_pressed"]
+[connection signal="pressed" from="Control/FinalButton" to="Control" method="_on_final_button_pressed"]
