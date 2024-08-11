@@ -43,3 +43,4 @@ script = ExtResource("3_wn208")
 audio_file_path = "res://assets/sounds/TITLE_SCREEN_deep-space-167140.wav"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioManager"]
+volume_db = -2.395

@@ -66,6 +66,7 @@ script = ExtResource("5_hw34g")
 audio_file_path = "res://assets/sounds/GAME_PLAY_dream-nebula-lofi-228369.wav"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioManager"]
+volume_db = -4.0
 
 [connection signal="pressed" from="Control/ButtonSiguiente" to="Control" method="_on_button_siguiente_pressed"]
 [connection signal="pressed" from="Control/ButtonAnterior" to="Control" method="_on_button_anterior_pressed"]

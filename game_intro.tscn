@@ -148,3 +148,4 @@ script = ExtResource("8_htw18")
 audio_file_path = "res://assets/sounds/GAME_INTRO_nebula-200664.wav"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioManager"]
+volume_db = -4.0
