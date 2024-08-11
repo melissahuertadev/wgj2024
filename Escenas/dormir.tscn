@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2bcb1k0uo8gx"]
+
+[ext_resource type="Script" path="res://Escenas/dormir.gd" id="1_lrrq4"]
+[ext_resource type="Texture2D" uid="uid://bau2epee1h8qh" path="res://fondos/fondo1.png" id="1_uiw37"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_lrrq4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 162.0
+offset_top = 99.0
+offset_right = 1761.0
+offset_bottom = 997.0
+texture = ExtResource("1_uiw37")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 794.0
+offset_top = 494.0
+offset_right = 1086.0
+offset_bottom = 549.0
+text = "CREO QUE ME IRÉ A DORMIR"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1042.0
+offset_top = 751.0
+offset_right = 1200.0
+offset_bottom = 791.0
+text = "CONTINUAR
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

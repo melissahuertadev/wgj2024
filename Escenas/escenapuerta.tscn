@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3afi03x3ixuc"]
+[gd_scene load_steps=3 format=3 uid="uid://d3afi03x3ixuc"]
 
 [ext_resource type="Texture2D" uid="uid://bufqb2skqxxoe" path="res://fondos/fondo3.png" id="1_txp1x"]
+[ext_resource type="Script" path="res://Escenas/escenapuerta.gd" id="1_xpj76"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_xpj76")
 
 [node name="Sprite2DFondo" type="Sprite2D" parent="."]
 position = Vector2(962.267, 542.5)
@@ -18,3 +20,26 @@ text = "
 
                ¿Debería irme a dormir?
 "
+
+[node name="Button_NoHayNada" type="Button" parent="."]
+offset_left = 766.0
+offset_top = 408.0
+offset_right = 1065.0
+offset_bottom = 481.0
+text = "Creo que no hay nada aquí
+"
+
+[node name="Button_HayAlgo" type="Button" parent="."]
+offset_left = 763.0
+offset_top = 545.0
+offset_right = 1063.0
+offset_bottom = 629.0
+text = "Creo que hay algo aquí"
+
+[node name="RestartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="pressed" from="Button_NoHayNada" to="." method="_on_button_no_hay_nada_pressed"]
+[connection signal="pressed" from="Button_HayAlgo" to="." method="_on_button_hay_algo_pressed"]

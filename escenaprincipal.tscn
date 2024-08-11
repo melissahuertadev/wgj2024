@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c70ehhd5aau5n"]
+[gd_scene load_steps=5 format=3 uid="uid://c70ehhd5aau5n"]
 
 [ext_resource type="Script" path="res://ControlScript..gd" id="1_3jnjx"]
 [ext_resource type="Texture2D" uid="uid://b2k862di8p0iy" path="res://Anomalias/anomalia1.png" id="2_2ftpb"]
 [ext_resource type="Texture2D" uid="uid://kqg3wsb6x5c2" path="res://Anomalias/anomalia2.png" id="3_gcsn2"]
 [ext_resource type="Texture2D" uid="uid://ds10bnsfx8nhn" path="res://Anomalias/anomalia3.png" id="4_771qj"]
-[ext_resource type="Script" path="res://scripts/AudioLoopBase.gd" id="5_hw34g"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -47,27 +46,45 @@ offset_right = 1036.0
 offset_bottom = 456.0
 
 [node name="SpriteAnomalia1" type="Sprite2D" parent="Control"]
-visible = false
 position = Vector2(153, 125)
 texture = ExtResource("2_2ftpb")
 
+[node name="ButtonDetectedAnomalia1" type="Button" parent="Control/SpriteAnomalia1"]
+self_modulate = Color(0, 0, 0, 0)
+offset_left = -18.0
+offset_top = -32.0
+offset_right = 19.0
+offset_bottom = 34.0
+
 [node name="SpriteAnomalia2" type="Sprite2D" parent="Control"]
-visible = false
 position = Vector2(583, 585)
 texture = ExtResource("3_gcsn2")
 
+[node name="ButtonDetectedAnomalia2" type="Button" parent="Control/SpriteAnomalia2"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 35.0
+offset_bottom = 34.0
+
 [node name="SpriteAnomalia3" type="Sprite2D" parent="Control"]
-visible = false
 position = Vector2(956, 328)
 texture = ExtResource("4_771qj")
 
-[node name="AudioManager" type="Node" parent="."]
-script = ExtResource("5_hw34g")
-audio_file_path = "res://assets/sounds/GAME_PLAY_dream-nebula-lofi-228369.wav"
+[node name="ButtonDetectedAnomalia3" type="Button" parent="Control/SpriteAnomalia3"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -61.0
+offset_top = -28.0
+offset_right = 65.0
+offset_bottom = 34.0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioManager"]
-volume_db = -4.0
+[node name="SpriteAnomalianull" type="Sprite2D" parent="Control"]
+visible = false
+position = Vector2(956, 328)
 
 [connection signal="pressed" from="Control/ButtonSiguiente" to="Control" method="_on_button_siguiente_pressed"]
 [connection signal="pressed" from="Control/ButtonAnterior" to="Control" method="_on_button_anterior_pressed"]
 [connection signal="pressed" from="Control/FinalButton" to="Control" method="_on_final_button_pressed"]
+[connection signal="pressed" from="Control/SpriteAnomalia1/ButtonDetectedAnomalia1" to="Control" method="_on_button_detected_anomalia_1_pressed"]
+[connection signal="pressed" from="Control/SpriteAnomalia2/ButtonDetectedAnomalia2" to="Control" method="_on_button_detected_anomalia_2_pressed"]
+[connection signal="pressed" from="Control/SpriteAnomalia3/ButtonDetectedAnomalia3" to="Control" method="_on_button_detected_anomalia_3_pressed"]
