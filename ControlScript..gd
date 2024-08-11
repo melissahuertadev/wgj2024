@@ -3,8 +3,8 @@ extends Control
 var fondos = [
 	"res://fondos/fondo1.png",
 	"res://fondos/fondo2.png",
-	"res://fondos/fondo3.png"
-]
+	"res://assets/images/puerta_scene/screen.png"
+] #"res://assets/images/puerta_scene/screen.png"
 
 var indice_actual = 0  # Índice del fondo actual
 var simultaneous_scene = preload("res://Escenas/escenapuerta.tscn").instantiate() #Para el Add chill (No change scene en caso haya validación con los cliks)

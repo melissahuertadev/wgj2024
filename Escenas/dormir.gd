@@ -6,7 +6,7 @@ func _ready():
 	boton_volver.connect("pressed", Callable(self, "_on_button_pressed"))
 
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://escenaprincipal1.tscn")
+	get_tree().change_scene_to_file("res://escenaprincipal.tscn")
 
 	# HAY PROBLEMAS CON EL QUEUE NO USAR!!!!!!!!!!!!!! 
 	#var current_scene = get_tree().current_scene
