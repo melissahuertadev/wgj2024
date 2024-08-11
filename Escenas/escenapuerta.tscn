@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3afi03x3ixuc"]
+
+[ext_resource type="Texture2D" uid="uid://bufqb2skqxxoe" path="res://fondos/fondo3.png" id="1_txp1x"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2DFondo" type="Sprite2D" parent="."]
+position = Vector2(962.267, 542.5)
+scale = Vector2(1.19791, 1.19933)
+texture = ExtResource("1_txp1x")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 485.0
+offset_top = 296.0
+offset_right = 1435.0
+offset_bottom = 784.0
+text = "
+
+               ¿Debería irme a dormir?
+"
