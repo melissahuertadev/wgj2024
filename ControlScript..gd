@@ -8,6 +8,7 @@ var fondos = [
 
 var indice_actual = 0  # Índice del fondo actual
 var simultaneous_scene = preload("res://Escenas/escenapuerta.tscn").instantiate() #Para el Add chill (No change scene en caso haya validación con los cliks)
+var simultaneous_scene1 = preload("res://Escenas/final.tscn").instantiate()
 
 @onready var background_rect = $BackgroundRect
 @onready var final_button = $FinalButton  
@@ -44,6 +45,10 @@ func _ready():
 	cambiar_fondo_actual()
 	actualizar_texto_dia()
 #	print(Global.clicko
+	if Global.contador_aciertos >= 5:
+		terminar_juego()
+		return
+
 
 
 # #####################################################SelecciónDelScriptDeAcuerdo al sprite global
@@ -125,3 +130,8 @@ func _on_final_button_pressed():
 func actualizar_texto_dia():
 	# Actualiza el texto del Label con el valor del contador global
 	label_dia.text = "Día " + str(Global.contador_aciertos)
+	
+func terminar_juego():
+	#get_tree().change_scene_to_file("res://Escenas/final.tscn")
+	get_tree().root.add_child(simultaneous_scene1)
+	print ("JUEGO TERMINADO!!!!!")
