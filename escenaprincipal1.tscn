@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://ch2x5jnl3o1f3"]
+[gd_scene load_steps=6 format=3 uid="uid://d1r2325hc0tqx"]
 
-[ext_resource type="Script" path="res://ControlScript..gd" id="1_fj5tb"]
+[ext_resource type="Script" path="res://ControlScript.bkp.gd" id="1_fj5tb"]
 [ext_resource type="Texture2D" uid="uid://bebgcu87jrvw8" path="res://assets/images/puerta_scene/screen.png" id="2_iowel"]
 [ext_resource type="Texture2D" uid="uid://b2k862di8p0iy" path="res://Anomalias/anomalia1.png" id="3_y5486"]
 [ext_resource type="Texture2D" uid="uid://kqg3wsb6x5c2" path="res://Anomalias/anomalia2.png" id="4_8p43g"]

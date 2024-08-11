@@ -8,6 +8,8 @@ func _ready():
 	boton_hay_algo.connect("pressed", Callable(self, "_on_button_hay_algo_pressed"))
 
 func _on_button_no_hay_nada_pressed():
+	#print("Global.sprite_seleccionado", Global.sprite_seleccionado)
+	#print("Global.sprite_anomalianul", Global.sprite_anomalianull)
 	if Global.sprite_seleccionado != null and Global.sprite_seleccionado != Global.sprite_anomalianull:
 		Global.contador_aciertos = 0
 		print("Contador de aciertos reiniciado a:", Global.contador_aciertos)
