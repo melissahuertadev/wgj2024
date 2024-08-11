@@ -1,7 +1,7 @@
 extends Control
 
 var fondos = [
-	"res://fondos/fondo1.png",
+	"res://assets/images/sala_de_comando_scene/screen.png",
 	"res://fondos/fondo2.png",
 	"res://assets/images/puerta_scene/screen.png"
 ] #"res://assets/images/puerta_scene/screen.png"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dadmk7cjwlffk"]
+[gd_scene load_steps=6 format=3 uid="uid://ch2x5jnl3o1f3"]
 
 [ext_resource type="Script" path="res://ControlScript..gd" id="1_fj5tb"]
 [ext_resource type="Texture2D" uid="uid://bebgcu87jrvw8" path="res://assets/images/puerta_scene/screen.png" id="2_iowel"]
