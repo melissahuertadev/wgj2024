@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b3lg1ub1oacsi"]
+[gd_scene load_steps=16 format=3 uid="uid://b3lg1ub1oacsi"]
 
 [ext_resource type="Script" path="res://game_intro.gd" id="1_eut6r"]
 [ext_resource type="Texture2D" uid="uid://cyc4fxpyp5qyh" path="res://assets/images/intro_screen.png" id="2_0noin"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bnn48l4rffhr2" path="res://assets/story5.png" id="5_ckbki"]
 [ext_resource type="Theme" uid="uid://vjgf023h2hbx" path="res://themes/intro_screen_theme.tres" id="7_36pj3"]
 [ext_resource type="Script" path="res://scripts/AudioLoopBase.gd" id="8_htw18"]
+[ext_resource type="Theme" uid="uid://05fym7366cqr" path="res://themes/title_screen_theme.tres" id="8_x652d"]
 
 [sub_resource type="Animation" id="Animation_b5ap2"]
 length = 0.001
@@ -129,7 +130,8 @@ offset_left = 985.0
 offset_top = 806.0
 offset_right = 1239.0
 offset_bottom = 874.0
-theme = ExtResource("7_36pj3")
+theme = ExtResource("8_x652d")
+theme_override_font_sizes/font_size = 82
 text = "CONTINUAR >"
 
 [node name="AudioManager" type="Node" parent="."]

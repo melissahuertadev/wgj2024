@@ -15,7 +15,7 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("2_4uyim")
 
-[node name="TextEdit" type="TextEdit" parent="."]
+[node name="PromptText" type="TextEdit" parent="."]
 offset_left = 560.0
 offset_top = 340.0
 offset_right = 1360.0

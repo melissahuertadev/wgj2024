@@ -9,6 +9,7 @@ func _ready():
 	boton_hay_algo.connect("pressed", Callable(self, "_on_button_hay_algo_pressed"))
 
 func _on_button_no_hay_nada_pressed():
+	Global.player_eligio_descansar = true
 	#print("Global.sprite_seleccionado", Global.sprite_seleccionado)
 	#print("Global.sprite_anomalianul", Global.sprite_anomalianull)
 	if Global.sprite_seleccionado != null and Global.sprite_seleccionado != Global.sprite_anomalianull:
@@ -21,6 +22,7 @@ func _on_button_no_hay_nada_pressed():
 		get_tree().change_scene_to_file("res://Escenas/dormir.tscn")
 
 func _on_button_hay_algo_pressed():
+	Global.player_eligio_descansar = false
 	if Global.sprite_seleccionado != null and Global.sprite_seleccionado != Global.sprite_anomalianull:
 		Global.contador_aciertos += 1
 		print("Contador de aciertos incrementado a:", Global.contador_aciertos)

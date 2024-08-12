@@ -8,7 +8,7 @@ var fondos = [
 
 var indice_actual = 0  # Índice del fondo actual
 var simultaneous_scene = preload("res://Escenas/escenapuerta.tscn").instantiate() #Para el Add chill (No change scene en caso haya validación con los cliks)
-var simultaneous_scene1 = preload("res://Escenas/final.tscn").instantiate()
+var simultaneous_scene1 = preload("res://Escenas/win_screen.tscn").instantiate()
 
 @onready var background_rect = $BackgroundRect
 @onready var final_button = $FinalButton  
