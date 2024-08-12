@@ -4,7 +4,8 @@ extends Node2D
 @onready var boton_hay_algo = $Button_HayAlgo
 
 func _ready():
-	boton_no_hay_nada.connect("pressed", Callable(self, "_on_button_no_hay_nada_pressed")) # Conectar la lógica para cuando el jugador elige "Creo que no hay nada aquí" "Creo que hay algo aquí"
+	# Conectar la lógica para cuando el jugador elige "Creo que no hay nada aquí" "Creo que hay algo aquí"
+	boton_no_hay_nada.connect("pressed", Callable(self, "_on_button_no_hay_nada_pressed")) 
 	boton_hay_algo.connect("pressed", Callable(self, "_on_button_hay_algo_pressed"))
 
 func _on_button_no_hay_nada_pressed():

@@ -13,8 +13,8 @@
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 603.0
-offset_bottom = 352.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 script = ExtResource("1_gg7qt")
 
 [node name="BackgroundRect" type="TextureRect" parent="Control"]

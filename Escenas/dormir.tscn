@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c2bcb1k0uo8gx"]
 
 [ext_resource type="Script" path="res://Escenas/dormir.gd" id="1_lrrq4"]
-[ext_resource type="Texture2D" uid="uid://b51gh0ng5cfu1" path="res://assets/images/sala_de_comando_scene/screen.png" id="2_4uyim"]
+[ext_resource type="Texture2D" uid="uid://b225ckqqh2nve" path="res://assets/images/sala_de_comando_scene/screen.png" id="2_4uyim"]
 [ext_resource type="Theme" uid="uid://05fym7366cqr" path="res://themes/title_screen_theme.tres" id="3_osmgg"]
 
 [node name="Node2D" type="Node2D"]
@@ -30,5 +30,3 @@ theme = ExtResource("3_osmgg")
 theme_override_font_sizes/font_size = 30
 text = "CONTINUAR
 "
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

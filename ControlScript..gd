@@ -27,7 +27,7 @@ var texturas_anomalia1 = [
 
 #vitrina
 var texturas_anomalia2 = [
-	load("res://assets/images/vitrina_scene/alien1.pngg"),
+	load("res://assets/images/vitrina_scene/alien1.png"),
 	#load("res://Anomalias/anomalia22.png")
 ]
 

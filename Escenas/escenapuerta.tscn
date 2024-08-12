@@ -47,6 +47,3 @@ text = "Creo que hay algo aquí"
 wait_time = 2.0
 one_shot = true
 autostart = true
-
-[connection signal="pressed" from="Button_NoHayNada" to="." method="_on_button_no_hay_nada_pressed"]
-[connection signal="pressed" from="Button_HayAlgo" to="." method="_on_button_hay_algo_pressed"]
