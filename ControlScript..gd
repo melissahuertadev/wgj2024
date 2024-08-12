@@ -19,15 +19,19 @@ var simultaneous_scene1 = preload("res://Escenas/final.tscn").instantiate()
 @onready var sprite_anomalianull = $SpriteAnomalianull
 @onready var label_dia = $LabelDia 
 
-
+#sala de comando
 var texturas_anomalia1 = [
 	load("res://Anomalias/anomalia1.png"),
 	#load("res://Anomalias/anomalia11.png")
 ]
+
+#vitrina
 var texturas_anomalia2 = [
 	load("res://Anomalias/anomalia2.png"),
 	#load("res://Anomalias/anomalia22.png")
 ]
+
+#puerta
 var texturas_anomalia3 = [
 	load("res://Anomalias/anomalia3.png"),
 	#load("res://Anomalias/anomalia33.png")

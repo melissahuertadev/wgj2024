@@ -1,6 +1,6 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://05fym7366cqr"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://c1v7gva6oakb1"]
 
-[ext_resource type="FontFile" uid="uid://dlhvt4e714vlm" path="res://fonts/computer_pixel-7.ttf" id="1_i5e67"]
+[ext_resource type="FontFile" uid="uid://dlhvt4e714vlm" path="res://fonts/computer_pixel-7.ttf" id="1_h6ul4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nijgu"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -20,7 +20,7 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 border_color = Color(0.8, 0.8, 0.8, 0)
 
 [resource]
-default_font = ExtResource("1_i5e67")
+default_font = ExtResource("1_h6ul4")
 default_font_size = 42
 Button/colors/font_color = Color(1, 0.541176, 0, 1)
 Button/colors/font_disabled_color = Color(0.498039, 0.258824, 0, 1)
@@ -32,4 +32,4 @@ Button/styles/focus = SubResource("StyleBoxFlat_nijgu")
 Button/styles/hover = SubResource("StyleBoxFlat_x6qeu")
 Button/styles/normal = SubResource("StyleBoxEmpty_lgkxq")
 Button/styles/pressed = SubResource("StyleBoxFlat_kva5s")
-Label/fonts/font = ExtResource("1_i5e67")
+Label/fonts/font = ExtResource("1_h6ul4")

@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://ControlScript..gd" id="1_gg7qt"]
 [ext_resource type="Texture2D" uid="uid://b2k862di8p0iy" path="res://Anomalias/anomalia1.png" id="2_2ftpb"]
 [ext_resource type="Theme" uid="uid://05fym7366cqr" path="res://themes/title_screen_theme.tres" id="2_7p0fu"]
-[ext_resource type="Texture2D" uid="uid://kqg3wsb6x5c2" path="res://Anomalias/anomalia2.png" id="3_gcsn2"]
+[ext_resource type="Texture2D" uid="uid://dm2kid8sqhmro" path="res://Anomalias/anomalia2.png" id="3_gcsn2"]
 [ext_resource type="Texture2D" uid="uid://ds10bnsfx8nhn" path="res://Anomalias/anomalia3.png" id="4_771qj"]
-[ext_resource type="Theme" uid="uid://vjgf023h2hbx" path="res://themes/bitacora_theme.tres" id="5_h2aub"]
+[ext_resource type="Theme" uid="uid://vjgf023h2hbx" path="res://themes/intro_screen_theme.tres" id="5_h2aub"]
 [ext_resource type="Script" path="res://scripts/AudioLoopBase.gd" id="7_heohg"]
 
 [node name="Node2D" type="Node2D"]
@@ -53,16 +53,17 @@ theme = ExtResource("2_7p0fu")
 text = "^"
 
 [node name="SpriteAnomalia1" type="Sprite2D" parent="Control"]
-position = Vector2(960, 520)
-scale = Vector2(3.28125, 1.64062)
+position = Vector2(959.5, 519.5)
+scale = Vector2(0.982143, 0.689874)
 texture = ExtResource("2_2ftpb")
 
 [node name="SpriteAnomalia2" type="Sprite2D" parent="Control"]
-position = Vector2(583, 585)
+position = Vector2(1570, 718)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_gcsn2")
 
 [node name="SpriteAnomalia3" type="Sprite2D" parent="Control"]
-position = Vector2(250, 590)
+position = Vector2(1289, 826)
 texture = ExtResource("4_771qj")
 
 [node name="SpriteAnomalianull" type="Sprite2D" parent="Control"]

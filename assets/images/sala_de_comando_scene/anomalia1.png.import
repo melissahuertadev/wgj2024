@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm2kid8sqhmro"
-path="res://.godot/imported/anomalia2.png-37bdfe34fae56fa6ecafa781fe02a0b9.ctex"
+uid="uid://c50h5gom6nqjn"
+path="res://.godot/imported/anomalia1.png-cc05adbbd74f7e4db7be47a70a910f23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Anomalias/anomalia2.png"
-dest_files=["res://.godot/imported/anomalia2.png-37bdfe34fae56fa6ecafa781fe02a0b9.ctex"]
+source_file="res://assets/images/sala_de_comando_scene/anomalia1.png"
+dest_files=["res://.godot/imported/anomalia1.png-cc05adbbd74f7e4db7be47a70a910f23.ctex"]
 
 [params]
 
