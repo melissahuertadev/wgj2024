@@ -10,7 +10,7 @@ extends Control
 
 var story_texts : Array = [
 	"Todo comenzó a las 08:00 AM.\n\nPartí en busca del \"Lirio de la Paz\", una planta crucial para regenerar el oxígeno en la Tierra. Por error introduje mal las coordenadas y quedé atrapada en un [color=#ff8a00]agujero negro[/color]. Llevo tres días reviviendo el 8 de agosto, [color=#ff8a00]una y otra vez[/color].\n\nDescubrí que al identificar [color=#ff8a00]las anomalías en mi nave[/color], el tiempo avanzaba unas horas. Y cuando no detectaba cambios, [color=#ff8a00]podía descansar en la sala.[/color]",
-	"[color=#affc41]MISIÓN:[/color] Debo sobrevivir 3 días sin que la anomalía reinicie el día.\n\n[color=#affc41]INSTRUCCIONES[/color]: Necesito identificar si hay alguna distorsión en la sala de comandos.\n
+	"[color=#affc41]MISIÓN:[/color] Debo sobrevivir [color=#ff8a00]" + str(Global.dias_por_sobrevivir) +" días[/color] sin que la anomalía reinicie el día.\n\n[color=#affc41]INSTRUCCIONES[/color]: Necesito identificar si hay alguna distorsión en la sala de comandos.\n
 	> Si no encuentro nada, debo descansar aquí.
 	> Si encuentro algo diferente, debo salir de la sala.
 	\nDe lo contrario, mi día se reiniciará...\nDebo encontrar una manera de escapar de este bucle..."

@@ -21,13 +21,13 @@ var simultaneous_scene1 = preload("res://Escenas/final.tscn").instantiate()
 
 #sala de comando
 var texturas_anomalia1 = [
-	load("res://Anomalias/anomalia1.png"),
+	load("res://assets/images/sala_de_comando_scene/silla1.png"),
 	#load("res://Anomalias/anomalia11.png")
 ]
 
 #vitrina
 var texturas_anomalia2 = [
-	load("res://Anomalias/anomalia2.png"),
+	load("res://assets/images/vitrina_scene/alien1.pngg"),
 	#load("res://Anomalias/anomalia22.png")
 ]
 
@@ -49,7 +49,7 @@ func _ready():
 	cambiar_fondo_actual()
 	actualizar_texto_dia()
 #	print(Global.clicko
-	if Global.contador_aciertos >= 5:
+	if Global.contador_aciertos >= Global.dias_por_sobrevivir+1:
 		terminar_juego()
 		return
 
