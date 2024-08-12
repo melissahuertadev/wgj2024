@@ -6,6 +6,9 @@
 
 [node name="Final" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(960, 540)
 texture = ExtResource("1_2jt6s")

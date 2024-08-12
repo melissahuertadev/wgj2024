@@ -13,9 +13,3 @@ func _ready():
 
 func _on_button_pressed():
 	get_tree().change_scene_to_file("res://escenaprincipal.tscn")
-
-	# HAY PROBLEMAS CON EL QUEUE NO USAR!!!!!!!!!!!!!! 
-	#var current_scene = get_tree().current_scene
-	#if current_scene:
-	#	current_scene.queue_free()  # Esto asegura que la escena actual se elimine correctamente
-	#get_tree().change_scene_to_file("res://escenaprincipal1.tscn")
