@@ -40,5 +40,4 @@ func player_ha_ganado():
 	if err != OK:
 		print("Error al cambiar a la escena win_screen: ", err)
 	else:
-		#get_tree().root.add_child(simultaneous_scene1)
 		print ("HAS GANADO!!!!!")
