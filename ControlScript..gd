@@ -7,8 +7,6 @@ var fondos = [
 ]
 
 var indice_actual = 0  # Índice del fondo actual
-var simultaneous_scene = preload("res://Escenas/escenapuerta.tscn").instantiate() #Para el Add chill (No change scene en caso haya validación con los cliks)
-var simultaneous_scene1 = preload("res://Escenas/final.tscn").instantiate()
 
 @onready var background_rect = $BackgroundRect
 @onready var final_button = $FinalButton  
@@ -19,15 +17,19 @@ var simultaneous_scene1 = preload("res://Escenas/final.tscn").instantiate()
 @onready var sprite_anomalianull = $SpriteAnomalianull
 @onready var label_dia = $LabelDia 
 
-
+#sala de comando
 var texturas_anomalia1 = [
-	load("res://Anomalias/anomalia1.png"),
+	load("res://assets/images/sala_de_comando_scene/silla1.png"),
 	#load("res://Anomalias/anomalia11.png")
 ]
+
+#vitrina
 var texturas_anomalia2 = [
-	load("res://Anomalias/anomalia2.png"),
+	load("res://assets/images/vitrina_scene/alien1.png"),
 	#load("res://Anomalias/anomalia22.png")
 ]
+
+#puerta
 var texturas_anomalia3 = [
 	load("res://Anomalias/anomalia3.png"),
 	#load("res://Anomalias/anomalia33.png")
@@ -41,14 +43,14 @@ var ultimo_sprite = null  # Almacena el último sprite seleccionado para evitar 
 func _ready():
 	Global.sprite_clickeado = false  # Resetea la variable al iniciar la escena
 	Global.sprite_anomalianull = sprite_anomalianull
-	seleccionar_sprite_aleatorio()
-	cambiar_fondo_actual()
-	actualizar_texto_dia()
-#	print(Global.clicko
-	if Global.contador_aciertos >= 5:
-		terminar_juego()
-		return
+	
+	if Global.contador_aciertos == 0:
+		Global.sprite_seleccionado = null
 
+	if Global.contador_aciertos < Global.dias_por_sobrevivir + 1:
+		seleccionar_sprite_aleatorio()
+		cambiar_fondo_actual()
+		actualizar_texto_dia()
 
 
 # #####################################################SelecciónDelScriptDeAcuerdo al sprite global
@@ -60,14 +62,13 @@ func seleccionar_sprite_aleatorio():
 		var nuevas_opciones = opciones.filter(func(opcion):
 			return opcion != ultimo_sprite
 			)
-		
+
 		if nuevas_opciones.size() > 0:
 			Global.sprite_seleccionado = nuevas_opciones[randi() % nuevas_opciones.size()]
 		else:
 			Global.sprite_seleccionado = null
-			
 			ultimo_sprite = Global.sprite_seleccionado
-			Global.sprite_seleccionado = sprite_seleccionado
+			#Global.sprite_seleccionado = sprite_seleccionado
 			sprite_anomalia1.visible = false
 			sprite_anomalia2.visible = false
 			sprite_anomalia3.visible = false
@@ -123,15 +124,14 @@ func _on_button_anterior_pressed():
 	cambiar_fondo_actual()
 
 func _on_final_button_pressed():
-	#get_tree().change_scene_to_file("res://Escenas/escenapuerta.tscn")
-	get_tree().root.add_child(simultaneous_scene)
+	if Global.sprite_seleccionado != null:
+		# Mueve el sprite al nodo raíz para que no se libere al cambiar de escena
+		Global.sprite_seleccionado.get_parent().remove_child(Global.sprite_seleccionado)
+		get_tree().root.add_child(Global.sprite_seleccionado)
+		
+	get_tree().change_scene_to_file("res://Escenas/escenapuerta.tscn")
 	final_button.visible = false
 	
 func actualizar_texto_dia():
 	# Actualiza el texto del Label con el valor del contador global
 	label_dia.text = "Día " + str(Global.contador_aciertos)
-	
-func terminar_juego():
-	#get_tree().change_scene_to_file("res://Escenas/final.tscn")
-	get_tree().root.add_child(simultaneous_scene1)
-	print ("JUEGO TERMINADO!!!!!")

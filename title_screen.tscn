@@ -9,6 +9,8 @@
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_uinck")
+metadata/_edit_horizontal_guides_ = [320.0, 636.0, 745.0]
+metadata/_edit_vertical_guides_ = [1814.0]
 
 [node name="TitleScreenRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -20,28 +22,28 @@ stretch_mode = 4
 
 [node name="Inicio" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1556.0
-offset_top = 537.0
-offset_right = 1804.0
-offset_bottom = 665.0
+offset_left = 1621.0
+offset_top = 637.0
+offset_right = 1813.0
+offset_bottom = 736.0
 theme = ExtResource("3_2gt2f")
 text = "INICIO"
 
 [node name="Opciones" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1430.0
-offset_top = 673.0
-offset_right = 1804.0
-offset_bottom = 801.0
+offset_left = 1516.0
+offset_top = 746.0
+offset_right = 1814.0
+offset_bottom = 845.0
 theme = ExtResource("3_2gt2f")
 text = "OPCIONES"
 
 [node name="Quit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1093.0
-offset_top = 811.0
-offset_right = 1803.0
-offset_bottom = 939.0
+offset_left = 1243.0
+offset_top = 855.0
+offset_right = 1814.0
+offset_bottom = 954.0
 theme = ExtResource("3_2gt2f")
 text = "SALIR DEL JUEGO"
 

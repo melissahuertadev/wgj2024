@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://vjgf023h2hbx"]
+
+[ext_resource type="FontFile" uid="uid://dlhvt4e714vlm" path="res://fonts/computer_pixel-7.ttf" id="1_1b4a5"]
+
+[resource]
+default_font = ExtResource("1_1b4a5")
+default_font_size = 42
+Button/colors/font_color = Color(0.0156863, 0.984314, 0.988235, 1)
+Button/colors/font_disabled_color = Color(0.000925121, 0.52001, 0.520022, 1)
+Button/colors/font_hover_color = Color(1, 0.541176, 0, 1)
+Button/colors/font_pressed_color = Color(0.49784, 0.257408, 2.88785e-07, 1)
+Button/font_sizes/font_size = 60
+Label/colors/font_color = Color(0.0156863, 0.984314, 0.988235, 1)
+Label/fonts/font = ExtResource("1_1b4a5")
+RichTextLabel/colors/default_color = Color(0.0117647, 0.984314, 0.988235, 1)
+TextEdit/colors/caret_background_color = Color(1, 0.541176, 0, 1)
+TextEdit/colors/font_color = Color(0.0117647, 0.984314, 0.988235, 1)
