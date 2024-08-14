@@ -20,19 +20,16 @@ var indice_actual = 0  # Índice del fondo actual
 #sala de comando
 var texturas_anomalia1 = [
 	load("res://assets/images/sala_de_comando_scene/silla1.png"),
-	#load("res://Anomalias/anomalia11.png")
 ]
 
 #vitrina
 var texturas_anomalia2 = [
 	load("res://assets/images/vitrina_scene/alien1.png"),
-	#load("res://Anomalias/anomalia22.png")
 ]
 
 #puerta
 var texturas_anomalia3 = [
-	load("res://Anomalias/anomalia3.png"),
-	#load("res://Anomalias/anomalia33.png")
+	load("res://assets/images/puerta_scene/screen.png"),
 ]
 
 var contador = 0  # Pra los clicks en los sprites

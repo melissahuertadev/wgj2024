@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://b0no6xio07hgv"]
 
-[ext_resource type="FontFile" uid="uid://dlhvt4e714vlm" path="res://fonts/computer_pixel-7.ttf" id="1_lba3b"]
+[ext_resource type="FontFile" uid="uid://dlhvt4e714vlm" path="res://addons/fonts/computer_pixel-7.ttf" id="1_lba3b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ucxy"]
 content_margin_left = 30.0

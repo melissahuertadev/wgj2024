@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://vjgf023h2hbx"]
 
-[ext_resource type="FontFile" uid="uid://dlhvt4e714vlm" path="res://fonts/computer_pixel-7.ttf" id="1_1b4a5"]
+[ext_resource type="FontFile" uid="uid://dlhvt4e714vlm" path="res://addons/fonts/computer_pixel-7.ttf" id="1_1b4a5"]
 
 [resource]
 default_font = ExtResource("1_1b4a5")

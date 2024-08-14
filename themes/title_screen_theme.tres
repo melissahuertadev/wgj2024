@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=6 format=3 uid="uid://05fym7366cqr"]
 
-[ext_resource type="FontFile" uid="uid://dlhvt4e714vlm" path="res://fonts/computer_pixel-7.ttf" id="1_i5e67"]
+[ext_resource type="FontFile" uid="uid://dlhvt4e714vlm" path="res://addons/fonts/computer_pixel-7.ttf" id="1_i5e67"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nijgu"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
