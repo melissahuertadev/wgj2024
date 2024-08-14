@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3afi03x3ixuc"]
+
+[ext_resource type="Script" path="res://scenes/game/nave_puerta_decision.gd" id="1_xpj76"]
+[ext_resource type="Theme" uid="uid://c1v7gva6oakb1" path="res://assets/themes/game_play_theme.tres" id="2_nfum6"]
+[ext_resource type="Texture2D" uid="uid://bebgcu87jrvw8" path="res://assets/images/puerta_scene/screen.png" id="2_o6i8s"]
+[ext_resource type="StyleBox" uid="uid://htyws5di1vfl" path="res://assets/themes/game_play_dialogo_buttons.tres" id="3_mwcim"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_xpj76")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_o6i8s")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 560.0
+offset_top = 340.0
+offset_right = 1360.0
+offset_bottom = 740.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_nfum6")
+text = "¿Qué debo hacer?"
+
+[node name="Button_NoHayNada" type="Button" parent="."]
+offset_left = 687.0
+offset_top = 513.0
+offset_right = 1233.0
+offset_bottom = 593.0
+theme = ExtResource("2_nfum6")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = ExtResource("3_mwcim")
+text = "Quedarme a descansar
+"
+
+[node name="Button_HayAlgo" type="Button" parent="."]
+offset_left = 748.0
+offset_top = 619.0
+offset_right = 1172.0
+offset_bottom = 699.0
+theme = ExtResource("2_nfum6")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = ExtResource("3_mwcim")
+text = "Salir de la sala"
+
+[node name="RestartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
