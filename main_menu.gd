@@ -11,7 +11,7 @@ func _ready():
 	quit_button.pressed.connect(_on_quit_button_pressed)
 
 func _on_start_button_pressed():
-	get_tree().change_scene_to_file("res://game_intro.tscn")
+	get_tree().change_scene_to_file("res://scenes/intro/intro_historia.tscn")
 
 func _on_options_button_pressed():
 	# Anular el volumen del juego

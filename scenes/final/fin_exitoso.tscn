@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://qps8j1pobqup" path="res://assets/images/game_end_screen.png" id="1_2jt6s"]
 [ext_resource type="Theme" uid="uid://b0no6xio07hgv" path="res://themes/end_screen_theme.tres" id="2_sijk6"]
-[ext_resource type="Script" path="res://scripts/AudioLoopBase.gd" id="3_jk7oi"]
+[ext_resource type="Script" path="res://assets/scripts/AudioLoopBase.gd" id="3_jk7oi"]
 
 [node name="Final" type="Node2D"]
 
@@ -35,6 +35,6 @@ wrap_mode = 1
 
 [node name="AudioManager" type="Node" parent="."]
 script = ExtResource("3_jk7oi")
-audio_file_path = "res://assets/sounds/CREDITS_mystere-7701.wav"
+audio_file_path = "res://addons/sounds/CREDITS_mystere-7701.wav"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioManager"]
