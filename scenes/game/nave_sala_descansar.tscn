@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scenes/game/nave_sala_descansar.gd" id="1_cfkm7"]
 [ext_resource type="Texture2D" uid="uid://b225ckqqh2nve" path="res://assets/images/sala_de_comando_scene/screen.png" id="2_3wcgf"]
-[ext_resource type="Theme" uid="uid://c1v7gva6oakb1" path="res://themes/game_play_theme.tres" id="3_qkdqd"]
-[ext_resource type="StyleBox" uid="uid://htyws5di1vfl" path="res://themes/game_play_dialogo_buttons.tres" id="4_8s4km"]
+[ext_resource type="Theme" uid="uid://c1v7gva6oakb1" path="res://assets/themes/game_play_theme.tres" id="3_qkdqd"]
+[ext_resource type="StyleBox" uid="uid://htyws5di1vfl" path="res://assets/themes/game_play_dialogo_buttons.tres" id="4_8s4km"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_cfkm7")

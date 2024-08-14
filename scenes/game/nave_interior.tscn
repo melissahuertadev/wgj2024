@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c70ehhd5aau5n"]
 
 [ext_resource type="Script" path="res://scenes/game/nave_interior.gd" id="1_pfqr7"]
-[ext_resource type="Theme" uid="uid://c1v7gva6oakb1" path="res://themes/game_play_theme.tres" id="2_2w4yl"]
+[ext_resource type="Theme" uid="uid://c1v7gva6oakb1" path="res://assets/themes/game_play_theme.tres" id="2_2w4yl"]
 [ext_resource type="Texture2D" uid="uid://enxr0opqq1l3" path="res://assets/images/sala_de_comando_scene/silla1.png" id="3_06k5f"]
 [ext_resource type="Texture2D" uid="uid://b74pp0l6s8bqp" path="res://assets/images/vitrina_scene/alien1.png" id="4_gfd07"]
 [ext_resource type="Texture2D" uid="uid://drcr7k514uat1" path="res://assets/images/puerta_scene/flor0.png" id="5_brquh"]

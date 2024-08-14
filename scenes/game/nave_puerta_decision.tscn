@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scenes/game/nave_puerta_decision.gd" id="1_xpj76"]
 [ext_resource type="Texture2D" uid="uid://xjjbsf1jha7k" path="res://assets/images/puerta_scene/screen1.png" id="2_115ko"]
-[ext_resource type="Theme" uid="uid://c1v7gva6oakb1" path="res://themes/game_play_theme.tres" id="2_nfum6"]
-[ext_resource type="StyleBox" uid="uid://htyws5di1vfl" path="res://themes/game_play_dialogo_buttons.tres" id="3_mwcim"]
+[ext_resource type="Theme" uid="uid://c1v7gva6oakb1" path="res://assets/themes/game_play_theme.tres" id="2_nfum6"]
+[ext_resource type="StyleBox" uid="uid://htyws5di1vfl" path="res://assets/themes/game_play_dialogo_buttons.tres" id="3_mwcim"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_xpj76")

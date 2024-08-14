@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scenes/intro/intro_historia.gd" id="1_eut6r"]
 [ext_resource type="Texture2D" uid="uid://cyc4fxpyp5qyh" path="res://assets/images/intro_screen.png" id="2_0noin"]
-[ext_resource type="Theme" uid="uid://vjgf023h2hbx" path="res://themes/intro_screen_theme.tres" id="7_36pj3"]
+[ext_resource type="Theme" uid="uid://vjgf023h2hbx" path="res://assets/themes/intro_screen_theme.tres" id="7_36pj3"]
 [ext_resource type="Script" path="res://assets/scripts/AudioLoopBase.gd" id="8_htw18"]
-[ext_resource type="Theme" uid="uid://05fym7366cqr" path="res://themes/title_screen_theme.tres" id="8_x652d"]
+[ext_resource type="Theme" uid="uid://05fym7366cqr" path="res://assets/themes/title_screen_theme.tres" id="8_x652d"]
 
 [sub_resource type="Animation" id="Animation_antv6"]
 length = 0.001
