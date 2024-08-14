@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://d3afi03x3ixuc"]
 
 [ext_resource type="Script" path="res://scenes/game/nave_puerta_decision.gd" id="1_xpj76"]
-[ext_resource type="Texture2D" uid="uid://xjjbsf1jha7k" path="res://assets/images/puerta_scene/screen1.png" id="2_115ko"]
 [ext_resource type="Theme" uid="uid://c1v7gva6oakb1" path="res://assets/themes/game_play_theme.tres" id="2_nfum6"]
+[ext_resource type="Texture2D" uid="uid://bebgcu87jrvw8" path="res://assets/images/puerta_scene/screen.png" id="2_o6i8s"]
 [ext_resource type="StyleBox" uid="uid://htyws5di1vfl" path="res://assets/themes/game_play_dialogo_buttons.tres" id="3_mwcim"]
 
 [node name="Node2D" type="Node2D"]
@@ -11,7 +11,7 @@ script = ExtResource("1_xpj76")
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("2_115ko")
+texture = ExtResource("2_o6i8s")
 
 [node name="TextEdit" type="TextEdit" parent="."]
 anchors_preset = 15

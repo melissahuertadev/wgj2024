@@ -68,7 +68,7 @@ texture = ExtResource("4_gfd07")
 
 [node name="SpriteAnomalia3" type="Sprite2D" parent="Control"]
 visible = false
-position = Vector2(1289, 826)
+position = Vector2(252, 546)
 texture = ExtResource("5_brquh")
 
 [node name="SpriteAnomalianull" type="Sprite2D" parent="Control"]
