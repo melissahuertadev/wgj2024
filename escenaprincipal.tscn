@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c70ehhd5aau5n"]
+[gd_scene load_steps=7 format=3 uid="uid://c70ehhd5aau5n"]
 
 [ext_resource type="Script" path="res://ControlScript..gd" id="1_gg7qt"]
 [ext_resource type="Theme" uid="uid://c1v7gva6oakb1" path="res://themes/game_play_theme.tres" id="2_erx6c"]
+[ext_resource type="Texture2D" uid="uid://enxr0opqq1l3" path="res://assets/images/sala_de_comando_scene/silla1.png" id="3_pm2we"]
 [ext_resource type="Texture2D" uid="uid://b74pp0l6s8bqp" path="res://assets/images/vitrina_scene/alien1.png" id="5_8g7nk"]
+[ext_resource type="Texture2D" uid="uid://drcr7k514uat1" path="res://assets/images/puerta_scene/flor0.png" id="5_gr536"]
 [ext_resource type="Script" path="res://scripts/AudioLoopBase.gd" id="7_heohg"]
 
 [node name="Node2D" type="Node2D"]
@@ -56,6 +58,7 @@ text = "<"
 visible = false
 position = Vector2(210, 495)
 scale = Vector2(1.25, 0.879)
+texture = ExtResource("3_pm2we")
 
 [node name="SpriteAnomalia2" type="Sprite2D" parent="Control"]
 visible = false
@@ -66,6 +69,7 @@ texture = ExtResource("5_8g7nk")
 [node name="SpriteAnomalia3" type="Sprite2D" parent="Control"]
 visible = false
 position = Vector2(1289, 826)
+texture = ExtResource("5_gr536")
 
 [node name="SpriteAnomalianull" type="Sprite2D" parent="Control"]
 visible = false

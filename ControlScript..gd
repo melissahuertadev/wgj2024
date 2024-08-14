@@ -3,7 +3,7 @@ extends Control
 var fondos = [
 	"res://assets/images/sala_de_comando_scene/screen.png",
 	"res://assets/images/vitrina_scene/screen.png",
-	"res://assets/images/puerta_scene/screen1.png"
+	"res://assets/images/puerta_scene/screen.png"
 ]
 
 var indice_actual = 0  # Índice del fondo actual
@@ -29,7 +29,7 @@ var texturas_anomalia2 = [
 
 #puerta
 var texturas_anomalia3 = [
-	load("res://assets/images/puerta_scene/screen.png"),
+	load("res://assets/images/puerta_scene/flor1.png"),
 ]
 
 var contador = 0  # Pra los clicks en los sprites
@@ -62,6 +62,7 @@ func seleccionar_sprite_aleatorio():
 
 		if nuevas_opciones.size() > 0:
 			Global.sprite_seleccionado = nuevas_opciones[randi() % nuevas_opciones.size()]
+			print(".. fue seleccionado", Global.sprite_seleccionado)
 		else:
 			Global.sprite_seleccionado = null
 			ultimo_sprite = Global.sprite_seleccionado

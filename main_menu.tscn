@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://bqo74cav0iy6b"]
 
-[ext_resource type="Script" path="res://title_screen.gd" id="1_uinck"]
-[ext_resource type="Texture2D" uid="uid://b2uh6p6bkcjxf" path="res://assets/images/title_screen.png" id="1_xgdkx"]
-[ext_resource type="Theme" uid="uid://05fym7366cqr" path="res://themes/title_screen_theme.tres" id="3_2gt2f"]
-[ext_resource type="Script" path="res://scripts/AudioLoopBase.gd" id="3_wn208"]
+[ext_resource type="Script" path="res://main_menu.gd" id="1_8c6vj"]
+[ext_resource type="Texture2D" uid="uid://b2uh6p6bkcjxf" path="res://assets/images/title_screen.png" id="2_yvwmk"]
+[ext_resource type="Theme" uid="uid://05fym7366cqr" path="res://themes/title_screen_theme.tres" id="3_pmbs8"]
+[ext_resource type="Script" path="res://scripts/AudioLoopBase.gd" id="4_neux1"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_uinck")
+script = ExtResource("1_8c6vj")
 metadata/_edit_horizontal_guides_ = [320.0, 636.0, 745.0]
 metadata/_edit_vertical_guides_ = [1814.0]
 
@@ -16,7 +16,7 @@ metadata/_edit_vertical_guides_ = [1814.0]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("1_xgdkx")
+texture = ExtResource("2_yvwmk")
 expand_mode = 3
 stretch_mode = 4
 
@@ -26,7 +26,7 @@ offset_left = 1621.0
 offset_top = 637.0
 offset_right = 1813.0
 offset_bottom = 736.0
-theme = ExtResource("3_2gt2f")
+theme = ExtResource("3_pmbs8")
 text = "INICIO"
 
 [node name="Opciones" type="Button" parent="."]
@@ -35,7 +35,7 @@ offset_left = 1516.0
 offset_top = 746.0
 offset_right = 1814.0
 offset_bottom = 845.0
-theme = ExtResource("3_2gt2f")
+theme = ExtResource("3_pmbs8")
 text = "OPCIONES"
 
 [node name="Quit" type="Button" parent="."]
@@ -44,11 +44,11 @@ offset_left = 1243.0
 offset_top = 855.0
 offset_right = 1814.0
 offset_bottom = 954.0
-theme = ExtResource("3_2gt2f")
+theme = ExtResource("3_pmbs8")
 text = "SALIR DEL JUEGO"
 
 [node name="AudioManager" type="Node" parent="."]
-script = ExtResource("3_wn208")
+script = ExtResource("4_neux1")
 audio_file_path = "res://addons/sounds/TITLE_SCREEN_deep-space-167140.wav"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioManager"]
