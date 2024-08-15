@@ -9,6 +9,11 @@ func _ready():
 	start_button.pressed.connect(_on_start_button_pressed)
 	options_button.pressed.connect(_on_options_button_pressed)
 	quit_button.pressed.connect(_on_quit_button_pressed)
+	
+	# Detener la música del juego si está sonando
+	var global_audio_manager = get_node("/root/GlobalAudioManager")
+	if global_audio_manager:
+		global_audio_manager.stop_game_music()
 
 func _on_start_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/intro/intro_historia.tscn")

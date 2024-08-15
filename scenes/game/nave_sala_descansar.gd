@@ -1,15 +1,21 @@
 extends Node2D
-@onready var boton_continuar = $Button
+
 @onready var descansar_prompt : TextEdit = $PromptText
 
-func _ready():
-	# Conectar el botón "CONTINUAR" a la función que cambiará la escena (NECESARIO!!! no solamente el fun on press)
-	boton_continuar.connect("pressed", Callable(self, "_on_button_pressed"))
+var escena_nave_interior = preload("res://scenes/game/nave_interior.tscn")
 
+func _ready():
 	if Global.player_eligio_descansar:
 		descansar_prompt.text = "Descansaré en la sala de comandos, a ver que pasa..."
 	else:
 		descansar_prompt.text = "Saliendo de la sala de comandos."
+	
+	# Esperar 2 segundos y luego cambiar de escena
+	await get_tree().create_timer(2.0).timeout
+	_on_timer_timeout()
 
-func _on_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/game/nave_interior.tscn")
+func _on_timer_timeout():
+	# Instanciar la escena precargada y cambiar a ella
+	var nueva_escena = escena_nave_interior.instantiate()
+	get_tree().current_scene.queue_free()  # Opcional: libera la escena actual
+	get_tree().get_root().add_child(nueva_escena)

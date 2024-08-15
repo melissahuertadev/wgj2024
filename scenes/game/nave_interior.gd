@@ -9,6 +9,7 @@ var fondos = [
 var indice_actual = 0  # Índice del fondo actual
 
 @onready var background_rect = $BackgroundRect
+@onready var puerta_rect = $PuertaTextureRect
 @onready var final_button = $FinalButton  
 #sprite anomalias
 @onready var sprite_anomalia1 = $SpriteAnomalia1
@@ -38,6 +39,11 @@ var ultimo_sprite = null  # Almacena el último sprite seleccionado para evitar 
 #var sprite_clickeado = false  
 
 func _ready():
+	var global_audio_manager = get_node("/root/GlobalAudioManager")
+	if global_audio_manager:
+		global_audio_manager.start_game_music()
+		
+	ocultar_todas_las_anomalias()
 	Global.sprite_clickeado = false  # Resetea la variable al iniciar la escena
 	Global.sprite_anomalianull = sprite_anomalianull
 	
@@ -66,12 +72,13 @@ func seleccionar_sprite_aleatorio():
 			Global.sprite_seleccionado = null
 			ultimo_sprite = Global.sprite_seleccionado
 			#Global.sprite_seleccionado = sprite_seleccionado
-			sprite_anomalia1.visible = false
-			sprite_anomalia2.visible = false
-			sprite_anomalia3.visible = false
-			sprite_anomalianull.visible = false
+			ocultar_todas_las_anomalias()
 
-
+func ocultar_todas_las_anomalias():
+	sprite_anomalia1.visible = false
+	sprite_anomalia2.visible = false
+	sprite_anomalia3.visible = false
+	sprite_anomalianull.visible = false
 	# Seleccionar aleatoriamente una textura para el sprite seleccionado
 	#if Global.sprite_seleccionado == sprite_anomalia1:
 	#	sprite_anomalia1.texture = texturas_anomalia1[randi() % texturas_anomalia1.size()]
@@ -100,11 +107,14 @@ func cambiar_fondo_actual():
 		sprite_anomalia2.visible = true
 	elif indice_actual == 2 and Global.sprite_seleccionado == sprite_anomalia3:
 		sprite_anomalia3.visible = true
+		
 
 	# Verificar si estamos en la última imagen
 	if indice_actual == fondos.size() - 1:
+		puerta_rect.visible = true
 		final_button.visible = true
 	else:
+		puerta_rect.visible = false
 		final_button.visible = false
 
 # Funciones de los botones
@@ -121,11 +131,17 @@ func _on_button_anterior_pressed():
 	cambiar_fondo_actual()
 
 func _on_final_button_pressed():
+	puerta_rect.visible = false
+	
 	if Global.sprite_seleccionado != null:
 		# Mueve el sprite al nodo raíz para que no se libere al cambiar de escena
 		Global.sprite_seleccionado.get_parent().remove_child(Global.sprite_seleccionado)
 		get_tree().root.add_child(Global.sprite_seleccionado)
-		
+	
+	#1. Aparecer modal con opciones..
+	#2. Si hace click en quedarse a descansar.... mostrar sala de comando, anomalia no debe estar en el 1er cuadro
+	#3. Si hace click en salir de la sala, hacer animacion de la puerta
+
 	get_tree().change_scene_to_file("res://scenes/game/nave_puerta_decision.tscn")
 	final_button.visible = false
 	
