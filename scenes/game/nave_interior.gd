@@ -39,6 +39,11 @@ var ultimo_sprite = null  # Almacena el último sprite seleccionado para evitar 
 #var sprite_clickeado = false  
 
 func _ready():
+	var global_audio_manager = get_node("/root/GlobalAudioManager")
+	if global_audio_manager:
+		global_audio_manager.start_game_music()
+		
+	ocultar_todas_las_anomalias()
 	Global.sprite_clickeado = false  # Resetea la variable al iniciar la escena
 	Global.sprite_anomalianull = sprite_anomalianull
 	
@@ -67,12 +72,13 @@ func seleccionar_sprite_aleatorio():
 			Global.sprite_seleccionado = null
 			ultimo_sprite = Global.sprite_seleccionado
 			#Global.sprite_seleccionado = sprite_seleccionado
-			sprite_anomalia1.visible = false
-			sprite_anomalia2.visible = false
-			sprite_anomalia3.visible = false
-			sprite_anomalianull.visible = false
+			ocultar_todas_las_anomalias()
 
-
+func ocultar_todas_las_anomalias():
+	sprite_anomalia1.visible = false
+	sprite_anomalia2.visible = false
+	sprite_anomalia3.visible = false
+	sprite_anomalianull.visible = false
 	# Seleccionar aleatoriamente una textura para el sprite seleccionado
 	#if Global.sprite_seleccionado == sprite_anomalia1:
 	#	sprite_anomalia1.texture = texturas_anomalia1[randi() % texturas_anomalia1.size()]
@@ -125,6 +131,8 @@ func _on_button_anterior_pressed():
 	cambiar_fondo_actual()
 
 func _on_final_button_pressed():
+	puerta_rect.visible = false
+	
 	if Global.sprite_seleccionado != null:
 		# Mueve el sprite al nodo raíz para que no se libere al cambiar de escena
 		Global.sprite_seleccionado.get_parent().remove_child(Global.sprite_seleccionado)

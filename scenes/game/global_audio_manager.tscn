@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv11blndwv7rg"]
+
+[ext_resource type="Script" path="res://scenes/game/global_audio_manager.gd" id="1_n83su"]
+
+[node name="GlobalAudioManager" type="Node2D"]
+script = ExtResource("1_n83su")
+game_music_path = "res://addons/sounds/GAME_PLAY_dream-nebula-lofi-228369.wav"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
