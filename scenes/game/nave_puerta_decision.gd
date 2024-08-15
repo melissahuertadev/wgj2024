@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var puerta_rect = $PuertaTextureRect
 @onready var boton_no_hay_nada = $Button_NoHayNada
 @onready var boton_hay_algo = $Button_HayAlgo
 
@@ -17,6 +18,10 @@ func _on_button_no_hay_nada_pressed():
 		player_acumula_aciertos()
 
 func _on_button_hay_algo_pressed():
+	$AnimationPlayer.play("deslizar_puerta_animation")
+	# Espera 1 segundo antes de continuar
+	await get_tree().create_timer(1.0).timeout
+	
 	Global.player_eligio_descansar = false
 	if Global.sprite_seleccionado != null and Global.sprite_seleccionado != Global.sprite_anomalianull:
 		player_acumula_aciertos()

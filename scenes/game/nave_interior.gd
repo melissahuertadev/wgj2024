@@ -9,6 +9,7 @@ var fondos = [
 var indice_actual = 0  # Índice del fondo actual
 
 @onready var background_rect = $BackgroundRect
+@onready var puerta_rect = $PuertaTextureRect
 @onready var final_button = $FinalButton  
 #sprite anomalias
 @onready var sprite_anomalia1 = $SpriteAnomalia1
@@ -100,11 +101,14 @@ func cambiar_fondo_actual():
 		sprite_anomalia2.visible = true
 	elif indice_actual == 2 and Global.sprite_seleccionado == sprite_anomalia3:
 		sprite_anomalia3.visible = true
+		
 
 	# Verificar si estamos en la última imagen
 	if indice_actual == fondos.size() - 1:
+		puerta_rect.visible = true
 		final_button.visible = true
 	else:
+		puerta_rect.visible = false
 		final_button.visible = false
 
 # Funciones de los botones
@@ -125,7 +129,11 @@ func _on_final_button_pressed():
 		# Mueve el sprite al nodo raíz para que no se libere al cambiar de escena
 		Global.sprite_seleccionado.get_parent().remove_child(Global.sprite_seleccionado)
 		get_tree().root.add_child(Global.sprite_seleccionado)
-		
+	
+	#1. Aparecer modal con opciones..
+	#2. Si hace click en quedarse a descansar.... mostrar sala de comando, anomalia no debe estar en el 1er cuadro
+	#3. Si hace click en salir de la sala, hacer animacion de la puerta
+
 	get_tree().change_scene_to_file("res://scenes/game/nave_puerta_decision.tscn")
 	final_button.visible = false
 	
