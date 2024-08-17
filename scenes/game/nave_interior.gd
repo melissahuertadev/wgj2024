@@ -23,19 +23,34 @@ var indice_actual = 0  # Índice del fondo actual
 @onready var sprite_anomalianull = $SpriteAnomalianull
 
 
+
 #sala de comando
-var texturas_anomalia1 = [
-	load("res://assets/images/sala_de_comando_scene/silla1.png"),
+var texturas_silla = [
+	load("res://assets/images/sala_de_comando_scene/anomalias/p1_silla_1.png")
+]
+var texturas_tablero = [
+	load("res://assets/images/sala_de_comando_scene/anomalias/p1_tablero_0.png"),
+	load("res://assets/images/sala_de_comando_scene/anomalias/p1_tablero_1.png")
 ]
 
 #vitrina
-var texturas_anomalia2 = [
-	load("res://assets/images/vitrina_scene/alien1.png"),
+var texturas_planta = [
+	load("res://assets/images/vitrina_scene/anomalias/p2_planta_0.png"),
+	load("res://assets/images/vitrina_scene/anomalias/p2_planta_1.png")
+]
+var texturas_vitrina = [
+	load("res://assets/images/vitrina_scene/anomalias/p2_vitrina_1.png")
 ]
 
 #puerta
-var texturas_anomalia3 = [
-	load("res://assets/images/puerta_scene/flor1.png"),
+var texturas_almohada = [
+	load("res://assets/images/puerta_scene/anomalias/p3_almohada_0.png"),
+	load("res://assets/images/puerta_scene/anomalias/p3_almohada_1.png"),
+]
+
+var texturas_mesa = [
+	load("res://assets/images/puerta_scene/anomalias/p3_mesa_0.png"),
+	load("res://assets/images/puerta_scene/anomalias/p3_mesa_1.png"),
 ]
 
 var contador = 0  # Pra los clicks en los sprites
@@ -66,61 +81,68 @@ func _ready():
 # Función para seleccionar aleatoriamente un sprite y una textura
 func seleccionar_sprite_aleatorio():
 	if Global.contador_aciertos > 0:
-		var opciones = [sprite_anomalianull, sprite_p1_silla_anomalia, sprite_p2_vitrina_anomalia, sprite_p3_mesa_anomalia]
+		var opciones = [sprite_anomalianull, sprite_p1_tablero_anomalia, sprite_p1_silla_anomalia, sprite_p2_vitrina_anomalia,  sprite_p2_planta_anomalia, sprite_p3_mesa_anomalia, sprite_p3_almohada_anomalia]
+		print("optiones", opciones)
 		var nuevas_opciones = opciones.filter(func(opcion):
 			return opcion != ultimo_sprite
-			)
+		)
+
+		print("nuevas opciones", nuevas_opciones)
 
 		if nuevas_opciones.size() > 0:
 			Global.sprite_seleccionado = nuevas_opciones[randi() % nuevas_opciones.size()]
 		else:
 			Global.sprite_seleccionado = null
 			ultimo_sprite = Global.sprite_seleccionado
-			#Global.sprite_seleccionado = sprite_seleccionado
+			Global.sprite_seleccionado = sprite_seleccionado
 			ocultar_todas_las_anomalias()
-
-func ocultar_todas_las_anomalias():
-	sprite_p1_silla_anomalia.visible = false
-	sprite_p2_vitrina_anomalia.visible = false
-	sprite_p3_mesa_anomalia.visible = false
-	sprite_anomalianull.visible = false
+		
+		print("el sprite seleccionado es ...", Global.sprite_seleccionado)
 	# Seleccionar aleatoriamente una textura para el sprite seleccionado
-	#if Global.sprite_seleccionado == sprite_p1_silla_anomalia:
-	#	sprite_p1_silla_anomalia.texture = texturas_anomalia1[randi() % texturas_anomalia1.size()]
-	#	sprite_p1_silla_anomalia.visible = true
-	#elif Global.sprite_seleccionado == sprite_p2_vitrina_anomalia:
-	#	sprite_p2_vitrina_anomalia.texture = texturas_anomalia2[randi() % texturas_anomalia2.size()]
-	#	sprite_p2_vitrina_anomalia.visible = true
-	#elif Global.sprite_seleccionado == sprite_p3_mesa_anomalia:
-	#	sprite_p3_mesa_anomalia.texture = texturas_anomalia3[randi() % texturas_anomalia3.size()]
-	#	sprite_p3_mesa_anomalia.visible = true
-	#elif Global.sprite_seleccionado == sprite_anomalianull:
-#		sprite_anomalianull.visible = true
+	if Global.sprite_seleccionado == sprite_p1_silla_anomalia:
+		sprite_p1_silla_anomalia.texture = texturas_silla[randi() % texturas_silla.size()]
+		sprite_p1_silla_anomalia.visible = true
+	elif Global.sprite_seleccionado == sprite_p1_tablero_anomalia:
+		sprite_p1_tablero_anomalia.texture = texturas_tablero[randi() % texturas_tablero.size()]
+		sprite_p1_tablero_anomalia.visible = true
+	elif Global.sprite_seleccionado == sprite_p2_vitrina_anomalia:
+		sprite_p2_vitrina_anomalia.texture = texturas_vitrina[randi() % texturas_vitrina.size()]
+		sprite_p2_vitrina_anomalia.visible = true
+	elif Global.sprite_seleccionado == sprite_p2_planta_anomalia:
+		sprite_p2_planta_anomalia.texture = texturas_planta[randi() % texturas_planta.size()]
+		sprite_p2_planta_anomalia.visible = true
+	elif Global.sprite_seleccionado == sprite_p3_almohada_anomalia:
+		sprite_p3_almohada_anomalia.texture = texturas_almohada[randi() % texturas_almohada.size()]
+		sprite_p3_almohada_anomalia.visible = true
+	elif Global.sprite_seleccionado == sprite_p3_mesa_anomalia:
+		sprite_p3_mesa_anomalia.texture = texturas_mesa[randi() % texturas_mesa.size()]
+		sprite_p3_mesa_anomalia.visible = true
+	elif Global.sprite_seleccionado == sprite_anomalianull:
+		sprite_anomalianull.visible = true
 
 # Función para cambiar la textura del fondo actual
 func cambiar_fondo_actual():
 	background_rect.texture = load(fondos[indice_actual])
-
-	sprite_p1_silla_anomalia.visible = false
-	sprite_p2_vitrina_anomalia.visible = false
-	sprite_p3_mesa_anomalia.visible = false
+	ocultar_todas_las_anomalias()
 
 	# Solo muestra el sprite seleccionado si corresponde al fondo actual
-	if indice_actual == 0 and Global.sprite_seleccionado == sprite_p1_silla_anomalia:
-		sprite_p1_silla_anomalia = true
-	elif indice_actual == 1 and Global.sprite_seleccionado == sprite_p2_vitrina_anomalia:
-		sprite_p2_vitrina_anomalia.visible = true
-	elif indice_actual == 2 and Global.sprite_seleccionado == sprite_p3_mesa_anomalia:
-		sprite_p3_mesa_anomalia.visible = true
-		
-
-	# Verificar si estamos en la última imagen
-	if indice_actual == fondos.size() - 1:
-		puerta_rect.visible = true
-		final_button.visible = true
-	else:
-		puerta_rect.visible = false
-		final_button.visible = false
+	if indice_actual == 0:
+		if Global.sprite_seleccionado == sprite_p1_tablero_anomalia:
+			sprite_p1_tablero_anomalia.visible = true
+		elif Global.sprite_seleccionado == sprite_p1_silla_anomalia:
+			sprite_p1_silla_anomalia.visible = true
+	elif indice_actual == 1:
+		if Global.sprite_seleccionado == sprite_p2_vitrina_anomalia:
+			sprite_p2_vitrina_anomalia.visible = true
+		elif Global.sprite_seleccionado == sprite_p2_planta_anomalia:
+			sprite_p2_planta_anomalia.visible = true
+	elif indice_actual == 2:
+		if Global.sprite_seleccionado == sprite_p3_mesa_anomalia:
+			sprite_p3_mesa_anomalia.visible = true
+		elif Global.sprite_seleccionado == sprite_p3_almohada_anomalia:
+			sprite_p3_almohada_anomalia.visible = true
+	
+	handle_ultimo_panel()
 
 # Funciones de los botones
 func _on_button_siguiente_pressed():
@@ -153,3 +175,25 @@ func _on_final_button_pressed():
 func actualizar_texto_dia():
 	# Actualiza el texto del Label con el valor del contador global
 	label_dia.text = "Día " + str(Global.contador_aciertos)
+
+
+## Helpers
+
+# Ocultar todas las anomalias
+func ocultar_todas_las_anomalias():
+	sprite_p1_silla_anomalia.visible = false
+	sprite_p1_tablero_anomalia.visible = false
+	sprite_p2_vitrina_anomalia.visible = false
+	sprite_p2_planta_anomalia.visible = false
+	sprite_p3_mesa_anomalia.visible = false
+	sprite_p3_almohada_anomalia.visible = false
+	sprite_anomalianull.visible = false
+
+# Verificar si estamos en el ultimo panel
+func handle_ultimo_panel():
+	if indice_actual == fondos.size() - 1:
+		puerta_rect.visible = true
+		final_button.visible = true
+	else:
+		puerta_rect.visible = false
+		final_button.visible = false
