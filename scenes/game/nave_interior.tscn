@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c70ehhd5aau5n"]
+[gd_scene load_steps=10 format=3 uid="uid://c70ehhd5aau5n"]
 
 [ext_resource type="Script" path="res://scenes/game/nave_interior.gd" id="1_pfqr7"]
 [ext_resource type="Theme" uid="uid://c1v7gva6oakb1" path="res://assets/themes/game_play_theme.tres" id="2_2w4yl"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://drcr7k514uat1" path="res://assets/images/puerta_scene/flor0.png" id="5_brquh"]
 [ext_resource type="Texture2D" uid="uid://blmstpr1tntiq" path="res://assets/images/sala_de_comando_scene/anomalias/p1_tablero_0.png" id="6_ogxpp"]
 [ext_resource type="Texture2D" uid="uid://bursptvyipqy1" path="res://assets/images/vitrina_scene/anomalias/p2_planta_1.png" id="7_50gxk"]
+[ext_resource type="Texture2D" uid="uid://bulm21vi26xuq" path="res://assets/images/puerta_scene/anomalias/p3_almohada_1.png" id="9_7iebb"]
 
 [node name="Node2D" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [540.0, -194.0]
@@ -87,10 +88,15 @@ visible = false
 position = Vector2(1481, 657)
 texture = ExtResource("7_50gxk")
 
-[node name="SpriteAnomalia3" type="Sprite2D" parent="Control"]
+[node name="SpriteP3Mesa" type="Sprite2D" parent="Control"]
 visible = false
 position = Vector2(252, 546)
 texture = ExtResource("5_brquh")
+
+[node name="SpriteP3Almohada" type="Sprite2D" parent="Control"]
+visible = false
+position = Vector2(1635, 593)
+texture = ExtResource("9_7iebb")
 
 [node name="SpriteAnomalianull" type="Sprite2D" parent="Control"]
 visible = false

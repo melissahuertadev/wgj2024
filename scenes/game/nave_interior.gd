@@ -10,6 +10,7 @@ var indice_actual = 0  # Índice del fondo actual
 
 @onready var background_rect = $BackgroundRect
 @onready var puerta_rect = $PuertaTextureRect
+@onready var label_dia = $LabelDia 
 @onready var final_button = $FinalButton  
 
 #sprite anomalias
@@ -17,11 +18,10 @@ var indice_actual = 0  # Índice del fondo actual
 @onready var sprite_p1_silla_anomalia = $SpriteP1Silla
 @onready var sprite_p2_vitrina_anomalia = $SpriteP2Vitrina
 @onready var sprite_p2_planta_anomalia = $SpriteP2Planta
-
-
-@onready var sprite_anomalia3 = $SpriteAnomalia3
+@onready var sprite_p3_mesa_anomalia = $SpriteP3Mesa
+@onready var sprite_p3_almohada_anomalia = $SpriteP3Almohada
 @onready var sprite_anomalianull = $SpriteAnomalianull
-@onready var label_dia = $LabelDia 
+
 
 #sala de comando
 var texturas_anomalia1 = [
@@ -66,7 +66,7 @@ func _ready():
 # Función para seleccionar aleatoriamente un sprite y una textura
 func seleccionar_sprite_aleatorio():
 	if Global.contador_aciertos > 0:
-		var opciones = [sprite_anomalianull, sprite_p1_silla_anomalia, sprite_p2_vitrina_anomalia, sprite_anomalia3]
+		var opciones = [sprite_anomalianull, sprite_p1_silla_anomalia, sprite_p2_vitrina_anomalia, sprite_p3_mesa_anomalia]
 		var nuevas_opciones = opciones.filter(func(opcion):
 			return opcion != ultimo_sprite
 			)
@@ -82,7 +82,7 @@ func seleccionar_sprite_aleatorio():
 func ocultar_todas_las_anomalias():
 	sprite_p1_silla_anomalia.visible = false
 	sprite_p2_vitrina_anomalia.visible = false
-	sprite_anomalia3.visible = false
+	sprite_p3_mesa_anomalia.visible = false
 	sprite_anomalianull.visible = false
 	# Seleccionar aleatoriamente una textura para el sprite seleccionado
 	#if Global.sprite_seleccionado == sprite_p1_silla_anomalia:
@@ -91,9 +91,9 @@ func ocultar_todas_las_anomalias():
 	#elif Global.sprite_seleccionado == sprite_p2_vitrina_anomalia:
 	#	sprite_p2_vitrina_anomalia.texture = texturas_anomalia2[randi() % texturas_anomalia2.size()]
 	#	sprite_p2_vitrina_anomalia.visible = true
-	#elif Global.sprite_seleccionado == sprite_anomalia3:
-	#	sprite_anomalia3.texture = texturas_anomalia3[randi() % texturas_anomalia3.size()]
-	#	sprite_anomalia3.visible = true
+	#elif Global.sprite_seleccionado == sprite_p3_mesa_anomalia:
+	#	sprite_p3_mesa_anomalia.texture = texturas_anomalia3[randi() % texturas_anomalia3.size()]
+	#	sprite_p3_mesa_anomalia.visible = true
 	#elif Global.sprite_seleccionado == sprite_anomalianull:
 #		sprite_anomalianull.visible = true
 
@@ -103,15 +103,15 @@ func cambiar_fondo_actual():
 
 	sprite_p1_silla_anomalia.visible = false
 	sprite_p2_vitrina_anomalia.visible = false
-	sprite_anomalia3.visible = false
+	sprite_p3_mesa_anomalia.visible = false
 
 	# Solo muestra el sprite seleccionado si corresponde al fondo actual
 	if indice_actual == 0 and Global.sprite_seleccionado == sprite_p1_silla_anomalia:
 		sprite_p1_silla_anomalia = true
 	elif indice_actual == 1 and Global.sprite_seleccionado == sprite_p2_vitrina_anomalia:
 		sprite_p2_vitrina_anomalia.visible = true
-	elif indice_actual == 2 and Global.sprite_seleccionado == sprite_anomalia3:
-		sprite_anomalia3.visible = true
+	elif indice_actual == 2 and Global.sprite_seleccionado == sprite_p3_mesa_anomalia:
+		sprite_p3_mesa_anomalia.visible = true
 		
 
 	# Verificar si estamos en la última imagen
