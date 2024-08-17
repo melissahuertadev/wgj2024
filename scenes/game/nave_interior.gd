@@ -10,7 +10,6 @@ extends Control
 @onready var sprite_p2_planta_anomalia = $SpriteP2Planta
 @onready var sprite_p3_mesa_anomalia = $SpriteP3Mesa
 @onready var sprite_p3_almohada_anomalia = $SpriteP3Almohada
-@onready var sprite_anomalianull = $SpriteAnomalianull
 
 ###Manejo de sprites
 var sprite_seleccionado = null  # Referencia al sprite que se hará visible
@@ -39,16 +38,7 @@ var texturas_mesa = [load("res://assets/images/puerta_scene/anomalias/p3_mesa_0.
 
 
 # Declaración de mapas
-var sprite_texturas_map = {
-	sprite_p1_silla_anomalia: texturas_silla,
-	sprite_p1_tablero_anomalia: texturas_tablero,
-	sprite_p2_vitrina_anomalia: texturas_vitrina,
-	sprite_p2_planta_anomalia: texturas_planta,
-	sprite_p3_almohada_anomalia: texturas_almohada,
-	sprite_p3_mesa_anomalia: texturas_mesa,
-	sprite_anomalianull: []
-}
-
+var sprite_texturas_map = {}
 var fondo_sprite_map = {}
 var opciones = []
 
@@ -58,9 +48,8 @@ func _ready():
 		global_audio_manager.start_game_music()
 		
 	init_mapa_de_fondos()
+	init_sprite_texture_map()
 	ocultar_todas_las_anomalias()
-	Global.sprite_clickeado = false  # Resetea la variable al iniciar la escena
-	Global.sprite_anomalianull = sprite_anomalianull
 	
 	if Global.contador_aciertos == 0:
 		Global.sprite_seleccionado = null
@@ -70,18 +59,14 @@ func _ready():
 		cargar_textura_fondo()
 		actualizar_texto_dia()
 
-
-# #####################################################SelecciónDelScriptDeAcuerdo al sprite global
-
 # Función para seleccionar aleatoriamente un sprite y una textura
 func seleccionar_sprite_aleatorio():
 	if Global.contador_aciertos > 0:
-		print("> ULTIMO SPRITE", ultimo_sprite)
-		opciones = [sprite_anomalianull, sprite_p1_tablero_anomalia, sprite_p1_silla_anomalia, sprite_p2_vitrina_anomalia,  sprite_p2_planta_anomalia, sprite_p3_mesa_anomalia, sprite_p3_almohada_anomalia]
+		opciones = [sprite_p1_tablero_anomalia, sprite_p1_silla_anomalia, sprite_p2_vitrina_anomalia,  sprite_p2_planta_anomalia, sprite_p3_mesa_anomalia, sprite_p3_almohada_anomalia]
 		var nuevas_opciones = opciones.filter(func(opcion):
 			return opcion != ultimo_sprite
 		)
-
+		
 		if nuevas_opciones.size() > 0:
 			Global.sprite_seleccionado = nuevas_opciones[randi() % nuevas_opciones.size()]
 			seleccionar_sprite_y_textura(Global.sprite_seleccionado)
@@ -89,7 +74,6 @@ func seleccionar_sprite_aleatorio():
 			ultimo_sprite = Global.sprite_seleccionado
 			Global.sprite_seleccionado = sprite_seleccionado
 			ocultar_todas_las_anomalias()
-		print("el sprite seleccionado es ...", Global.sprite_seleccionado)
 
 # Función para cambiar la textura del fondo actual
 func cargar_textura_fondo():
@@ -117,11 +101,28 @@ func init_mapa_de_fondos():
 		1: [sprite_p2_vitrina_anomalia, sprite_p2_planta_anomalia],
 		2: [sprite_p3_mesa_anomalia, sprite_p3_almohada_anomalia]
 	}
-	
+func init_sprite_texture_map():
+	sprite_texturas_map = {
+		sprite_p1_silla_anomalia: texturas_silla,
+		sprite_p1_tablero_anomalia: texturas_tablero,
+		sprite_p2_vitrina_anomalia: texturas_vitrina,
+		sprite_p2_planta_anomalia: texturas_planta,
+		sprite_p3_almohada_anomalia: texturas_almohada,
+		sprite_p3_mesa_anomalia: texturas_mesa,
+	}
+
 func seleccionar_sprite_y_textura(sprite):
 	var texturas = sprite_texturas_map.get(sprite, [])
+
 	if texturas.size() > 0:
-		sprite.texture = texturas[randi() % texturas.size()]
+		var textura_seleccionada = texturas[randi() % texturas.size()]
+		
+		# Determinar si la textura es una anomalía o normalidad
+		if textura_seleccionada.get_path().ends_with("_0.png"):
+			Global.es_anomalia = false
+		else:
+			Global.es_anomalia = true
+		sprite.texture = textura_seleccionada
 	sprite.visible = true
 
 # Ocultar todas las anomalias
@@ -156,7 +157,6 @@ func _on_button_anterior_pressed():
 	
 func _on_final_button_pressed():
 	puerta_rect.visible = false
-	
 	# Mueve el sprite al nodo raíz para que no se libere al cambiar de escena
 	if Global.sprite_seleccionado != null:
 		Global.sprite_seleccionado.get_parent().remove_child(Global.sprite_seleccionado)

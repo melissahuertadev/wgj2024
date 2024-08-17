@@ -11,7 +11,7 @@ func _ready():
 
 func _on_button_no_hay_nada_pressed():
 	Global.player_eligio_descansar = true
-	if Global.sprite_seleccionado != null and Global.sprite_seleccionado != Global.sprite_anomalianull:
+	if Global.sprite_seleccionado != null and Global.es_anomalia:
 		player_ha_perdido()
 	else:
 		player_acumula_aciertos()
@@ -22,7 +22,7 @@ func _on_button_hay_algo_pressed():
 	await get_tree().create_timer(1.0).timeout
 	
 	Global.player_eligio_descansar = false
-	if Global.sprite_seleccionado != null and Global.sprite_seleccionado != Global.sprite_anomalianull:
+	if Global.sprite_seleccionado != null and Global.es_anomalia:
 		player_acumula_aciertos()
 	else:
 		player_ha_perdido()
