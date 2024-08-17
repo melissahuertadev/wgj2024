@@ -12,7 +12,7 @@
 
 [node name="Node2D" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [540.0, -194.0]
-metadata/_edit_vertical_guides_ = [962.0]
+metadata/_edit_vertical_guides_ = [962.0, 1920.0]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -25,11 +25,9 @@ script = ExtResource("1_pfqr7")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-expand_mode = 3
 stretch_mode = 4
 
 [node name="PuertaTextureRect" type="TextureRect" parent="Control"]
-visible = false
 z_index = -1
 layout_mode = 0
 offset_right = 1920.0
