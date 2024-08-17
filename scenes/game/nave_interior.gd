@@ -67,7 +67,7 @@ func _ready():
 
 	if Global.contador_aciertos < Global.dias_por_sobrevivir + 1:
 		seleccionar_sprite_aleatorio()
-		cambiar_fondo_actual()
+		cargar_textura_fondo()
 		actualizar_texto_dia()
 
 
@@ -86,17 +86,15 @@ func seleccionar_sprite_aleatorio():
 			Global.sprite_seleccionado = nuevas_opciones[randi() % nuevas_opciones.size()]
 			seleccionar_sprite_y_textura(Global.sprite_seleccionado)
 		else:
-			Global.sprite_seleccionado = null
 			ultimo_sprite = Global.sprite_seleccionado
 			Global.sprite_seleccionado = sprite_seleccionado
 			ocultar_todas_las_anomalias()
-		
 		print("el sprite seleccionado es ...", Global.sprite_seleccionado)
 
 # Función para cambiar la textura del fondo actual
-func cambiar_fondo_actual():
-	background_rect.texture = load(fondos[indice_actual])
+func cargar_textura_fondo():
 	ocultar_todas_las_anomalias()
+	background_rect.texture = load(fondos[indice_actual])
 	
 	# Solo muestra el sprite seleccionado si corresponde al fondo actual
 	if fondo_sprite_map.has(indice_actual):
@@ -105,37 +103,7 @@ func cambiar_fondo_actual():
 				if sprite == Global.sprite_seleccionado:
 					sprite.visible = true
 					break
-				
 	handle_ultimo_panel()
-
-# Funciones de los botones
-func _on_button_siguiente_pressed():
-	indice_actual += 1
-	if indice_actual >= fondos.size():
-		indice_actual = 0
-	cambiar_fondo_actual()
-
-func _on_button_anterior_pressed():
-	indice_actual -= 1
-	if indice_actual < 0:
-		indice_actual = fondos.size() - 1
-	cambiar_fondo_actual()
-
-func _on_final_button_pressed():
-	puerta_rect.visible = false
-	
-	if Global.sprite_seleccionado != null:
-		# Mueve el sprite al nodo raíz para que no se libere al cambiar de escena
-		Global.sprite_seleccionado.get_parent().remove_child(Global.sprite_seleccionado)
-		get_tree().root.add_child(Global.sprite_seleccionado)
-	
-	#TO DO:
-	#1. Aparecer modal con opciones..
-	#2. Si hace click en quedarse a descansar.... mostrar sala de comando, anomalia no debe estar en el 1er cuadro
-
-	background_rect.texture = null
-	get_tree().change_scene_to_file("res://scenes/game/nave_puerta_decision.tscn")
-	final_button.visible = false
 	
 func actualizar_texto_dia():
 	# Actualiza el texto del Label con el valor del contador global
@@ -169,3 +137,35 @@ func handle_ultimo_panel():
 	else:
 		puerta_rect.visible = false
 		final_button.visible = false
+		
+		
+func navegar_paneles(delta):
+	indice_actual += delta
+	if indice_actual >= fondos.size():
+		indice_actual = 0
+	elif indice_actual < 0:
+		indice_actual = fondos.size() - 1
+	cargar_textura_fondo()
+	
+### Funciones de los botones
+func _on_button_siguiente_pressed():
+	navegar_paneles(1)
+
+func _on_button_anterior_pressed():
+	navegar_paneles(-1)
+	
+func _on_final_button_pressed():
+	puerta_rect.visible = false
+	
+	# Mueve el sprite al nodo raíz para que no se libere al cambiar de escena
+	if Global.sprite_seleccionado != null:
+		Global.sprite_seleccionado.get_parent().remove_child(Global.sprite_seleccionado)
+		get_tree().root.add_child(Global.sprite_seleccionado)
+	
+	background_rect.texture = null
+	get_tree().change_scene_to_file("res://scenes/game/nave_puerta_decision.tscn")
+	final_button.visible = false
+
+### TO DO:
+#1. Aparecer modal con opciones..
+#2. Si hace click en quedarse a descansar.... mostrar sala de comando, anomalia no debe estar en el 1er cuadro
