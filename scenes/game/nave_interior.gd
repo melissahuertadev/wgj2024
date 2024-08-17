@@ -61,6 +61,7 @@ func _ready():
 
 # Función para seleccionar aleatoriamente un sprite y una textura
 func seleccionar_sprite_aleatorio():
+	print("INTERIOR: ultimo sprite", ultimo_sprite)
 	if Global.contador_aciertos > 0:
 		opciones = [sprite_p1_tablero_anomalia, sprite_p1_silla_anomalia, sprite_p2_vitrina_anomalia,  sprite_p2_planta_anomalia, sprite_p3_mesa_anomalia, sprite_p3_almohada_anomalia]
 		var nuevas_opciones = opciones.filter(func(opcion):
@@ -159,6 +160,7 @@ func _on_final_button_pressed():
 	puerta_rect.visible = false
 	# Mueve el sprite al nodo raíz para que no se libere al cambiar de escena
 	if Global.sprite_seleccionado != null:
+		print("final.. get_parent()", Global.sprite_seleccionado.get_parent())
 		Global.sprite_seleccionado.get_parent().remove_child(Global.sprite_seleccionado)
 		get_tree().root.add_child(Global.sprite_seleccionado)
 	

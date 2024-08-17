@@ -96,10 +96,6 @@ visible = false
 position = Vector2(1635, 593)
 texture = ExtResource("9_7iebb")
 
-[node name="SpriteAnomalianull" type="Sprite2D" parent="Control"]
-visible = false
-position = Vector2(956, 328)
-
 [node name="LabelDia" type="Label" parent="Control"]
 layout_mode = 0
 offset_left = 1640.0
