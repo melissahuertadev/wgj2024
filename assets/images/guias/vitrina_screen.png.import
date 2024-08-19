@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnbk7h5d5ddn0"
-path="res://.godot/imported/planta1.png-bf9057898287516ee7b1d112c0332464.ctex"
+uid="uid://dtsve6gjbwse4"
+path="res://.godot/imported/vitrina_screen.png-0a658d6011232f095fa6f171a3d302b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/vitrina_scene/planta1.png"
-dest_files=["res://.godot/imported/planta1.png-bf9057898287516ee7b1d112c0332464.ctex"]
+source_file="res://assets/images/guias/vitrina_screen.png"
+dest_files=["res://.godot/imported/vitrina_screen.png-0a658d6011232f095fa6f171a3d302b3.ctex"]
 
 [params]
 

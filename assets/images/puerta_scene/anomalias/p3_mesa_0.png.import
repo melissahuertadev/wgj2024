@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqubhjoyanbpn"
-path="res://.godot/imported/tablero0.png-9ed942770d7d6bf47721b6b46bb8aced.ctex"
+uid="uid://sp38vgidlest"
+path="res://.godot/imported/p3_mesa_0.png-fc2655aef10729295fa1ff7931c2cb27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sala_de_comando_scene/tablero0.png"
-dest_files=["res://.godot/imported/tablero0.png-9ed942770d7d6bf47721b6b46bb8aced.ctex"]
+source_file="res://assets/images/puerta_scene/anomalias/p3_mesa_0.png"
+dest_files=["res://.godot/imported/p3_mesa_0.png-fc2655aef10729295fa1ff7931c2cb27.ctex"]
 
 [params]
 

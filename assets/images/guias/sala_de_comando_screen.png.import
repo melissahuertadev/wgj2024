@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drcr7k514uat1"
-path="res://.godot/imported/flor0.png-b4b74dcb432da1242f0e6659aab693dd.ctex"
+uid="uid://dq6kg78bctpaa"
+path="res://.godot/imported/sala_de_comando_screen.png-a4cf372fb3febad0983b5aea7f69e62c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/puerta_scene/flor0.png"
-dest_files=["res://.godot/imported/flor0.png-b4b74dcb432da1242f0e6659aab693dd.ctex"]
+source_file="res://assets/images/guias/sala_de_comando_screen.png"
+dest_files=["res://.godot/imported/sala_de_comando_screen.png-a4cf372fb3febad0983b5aea7f69e62c.ctex"]
 
 [params]
 

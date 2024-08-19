@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx8lql41clhwo"
-path="res://.godot/imported/screen.png-32966df113fa4ede286b118848bccf86.ctex"
+uid="uid://blmstpr1tntiq"
+path="res://.godot/imported/p1_tablero_0.png-23ed63e196029d64d56ac4e36cb847c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sala_de_comando_scene/screen.png"
-dest_files=["res://.godot/imported/screen.png-32966df113fa4ede286b118848bccf86.ctex"]
+source_file="res://assets/images/sala_de_comando_scene/anomalias/p1_tablero_0.png"
+dest_files=["res://.godot/imported/p1_tablero_0.png-23ed63e196029d64d56ac4e36cb847c6.ctex"]
 
 [params]
 

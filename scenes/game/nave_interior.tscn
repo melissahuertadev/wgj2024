@@ -1,15 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://c70ehhd5aau5n"]
+[gd_scene load_steps=10 format=3 uid="uid://c70ehhd5aau5n"]
 
 [ext_resource type="Script" path="res://scenes/game/nave_interior.gd" id="1_pfqr7"]
 [ext_resource type="Theme" uid="uid://c1v7gva6oakb1" path="res://assets/themes/game_play_theme.tres" id="2_2w4yl"]
 [ext_resource type="Texture2D" uid="uid://dyisqjy7jw1jp" path="res://assets/images/puerta_scene/puerta.png" id="2_vir5p"]
-[ext_resource type="Texture2D" uid="uid://enxr0opqq1l3" path="res://assets/images/sala_de_comando_scene/silla1.png" id="3_06k5f"]
-[ext_resource type="Texture2D" uid="uid://b74pp0l6s8bqp" path="res://assets/images/vitrina_scene/alien1.png" id="4_gfd07"]
-[ext_resource type="Texture2D" uid="uid://drcr7k514uat1" path="res://assets/images/puerta_scene/flor0.png" id="5_brquh"]
+[ext_resource type="Texture2D" uid="uid://cela41it2uh6x" path="res://assets/images/sala_de_comando_scene/anomalias/p1_silla_1.png" id="4_pnc3g"]
+[ext_resource type="Texture2D" uid="uid://bqrjsk2pfqo2e" path="res://assets/images/vitrina_scene/anomalias/p2_vitrina_1.png" id="6_inw3d"]
+[ext_resource type="Texture2D" uid="uid://blmstpr1tntiq" path="res://assets/images/sala_de_comando_scene/anomalias/p1_tablero_0.png" id="6_ogxpp"]
+[ext_resource type="Texture2D" uid="uid://c5cmqr7l53bmf" path="res://assets/images/vitrina_scene/anomalias/p2_planta_0.png" id="7_b5rpr"]
+[ext_resource type="Texture2D" uid="uid://sp38vgidlest" path="res://assets/images/puerta_scene/anomalias/p3_mesa_0.png" id="8_ilw4g"]
+[ext_resource type="Texture2D" uid="uid://bulm21vi26xuq" path="res://assets/images/puerta_scene/anomalias/p3_almohada_1.png" id="9_7iebb"]
 
 [node name="Node2D" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [540.0, -194.0]
-metadata/_edit_vertical_guides_ = [962.0]
+metadata/_edit_vertical_guides_ = [962.0, 1920.0]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -22,11 +25,9 @@ script = ExtResource("1_pfqr7")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-expand_mode = 3
 stretch_mode = 4
 
 [node name="PuertaTextureRect" type="TextureRect" parent="Control"]
-visible = false
 z_index = -1
 layout_mode = 0
 offset_right = 1920.0
@@ -62,26 +63,38 @@ rotation = 1.5708
 theme = ExtResource("2_2w4yl")
 text = "<"
 
-[node name="SpriteAnomalia1" type="Sprite2D" parent="Control"]
+[node name="SpriteP1Silla" type="Sprite2D" parent="Control"]
 visible = false
 position = Vector2(210, 495)
 scale = Vector2(1.25, 0.879)
-texture = ExtResource("3_06k5f")
+texture = ExtResource("4_pnc3g")
 
-[node name="SpriteAnomalia2" type="Sprite2D" parent="Control"]
+[node name="SpriteP1Tablero" type="Sprite2D" parent="Control"]
+visible = false
+position = Vector2(964, 520)
+scale = Vector2(0.971429, 0.936709)
+texture = ExtResource("6_ogxpp")
+
+[node name="SpriteP2Vitrina" type="Sprite2D" parent="Control"]
 visible = false
 position = Vector2(962.75, 446.25)
 scale = Vector2(0.99898, 1.00056)
-texture = ExtResource("4_gfd07")
+texture = ExtResource("6_inw3d")
 
-[node name="SpriteAnomalia3" type="Sprite2D" parent="Control"]
+[node name="SpriteP2Planta" type="Sprite2D" parent="Control"]
 visible = false
-position = Vector2(252, 546)
-texture = ExtResource("5_brquh")
+position = Vector2(1481, 657)
+texture = ExtResource("7_b5rpr")
 
-[node name="SpriteAnomalianull" type="Sprite2D" parent="Control"]
+[node name="SpriteP3Mesa" type="Sprite2D" parent="Control"]
 visible = false
-position = Vector2(956, 328)
+position = Vector2(252, 534)
+texture = ExtResource("8_ilw4g")
+
+[node name="SpriteP3Almohada" type="Sprite2D" parent="Control"]
+visible = false
+position = Vector2(1635, 593)
+texture = ExtResource("9_7iebb")
 
 [node name="LabelDia" type="Label" parent="Control"]
 layout_mode = 0

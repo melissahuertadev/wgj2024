@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb0qvflxi12yj"
-path="res://.godot/imported/planta0.png-df203c24355df47758537a529aac378c.ctex"
+uid="uid://bursptvyipqy1"
+path="res://.godot/imported/p2_planta_1.png-9ec6f38dc18fd77f79b1efb26b8afa53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/vitrina_scene/planta0.png"
-dest_files=["res://.godot/imported/planta0.png-df203c24355df47758537a529aac378c.ctex"]
+source_file="res://assets/images/vitrina_scene/anomalias/p2_planta_1.png"
+dest_files=["res://.godot/imported/p2_planta_1.png-9ec6f38dc18fd77f79b1efb26b8afa53.ctex"]
 
 [params]
 

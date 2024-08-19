@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtdjmtkefqlbd"
-path="res://.godot/imported/almohada0.png-420eaec0ceccda4d46dac32a826e3967.ctex"
+uid="uid://cadlqdj5aveh5"
+path="res://.godot/imported/p1_tablero_1.png-90028ac9ae1a09a38561e8b534257f6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/puerta_scene/almohada0.png"
-dest_files=["res://.godot/imported/almohada0.png-420eaec0ceccda4d46dac32a826e3967.ctex"]
+source_file="res://assets/images/sala_de_comando_scene/anomalias/p1_tablero_1.png"
+dest_files=["res://.godot/imported/p1_tablero_1.png-90028ac9ae1a09a38561e8b534257f6d.ctex"]
 
 [params]
 

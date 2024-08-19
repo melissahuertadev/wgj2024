@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b74pp0l6s8bqp"
-path="res://.godot/imported/alien1.png-ffc0dd58a32df8da60c46bbdf1fb8886.ctex"
+uid="uid://bulm21vi26xuq"
+path="res://.godot/imported/p3_almohada_1.png-3f5ba0b6f44107afc7ddb9407865eedb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/vitrina_scene/alien1.png"
-dest_files=["res://.godot/imported/alien1.png-ffc0dd58a32df8da60c46bbdf1fb8886.ctex"]
+source_file="res://assets/images/puerta_scene/anomalias/p3_almohada_1.png"
+dest_files=["res://.godot/imported/p3_almohada_1.png-3f5ba0b6f44107afc7ddb9407865eedb.ctex"]
 
 [params]
 

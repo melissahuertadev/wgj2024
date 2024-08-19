@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://enxr0opqq1l3"
-path="res://.godot/imported/silla1.png-2a9cecc31b2e09edf3fdb93180d337ed.ctex"
+uid="uid://cela41it2uh6x"
+path="res://.godot/imported/p1_silla_1.png-50f254d7554023ab73073b8c6fca13d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/sala_de_comando_scene/silla1.png"
-dest_files=["res://.godot/imported/silla1.png-2a9cecc31b2e09edf3fdb93180d337ed.ctex"]
+source_file="res://assets/images/sala_de_comando_scene/anomalias/p1_silla_1.png"
+dest_files=["res://.godot/imported/p1_silla_1.png-50f254d7554023ab73073b8c6fca13d5.ctex"]
 
 [params]
 
